@@ -114,7 +114,7 @@ toggleMenu = () => {
       </nav>
     <div 
       id="icon" 
-      tabIndex="0"
+      tabIndex="1"
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  

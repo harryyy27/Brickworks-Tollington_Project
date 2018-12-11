@@ -17,7 +17,6 @@ class Home extends React.Component {
   render() {
     return( 
         <div className='wrapper'>
-          <h1 ></h1>
           <main data-testid="home-page">
             <div id='logo'>
               <img id='logo-img' src={logoImg} alt='Brickworks logo'/>
