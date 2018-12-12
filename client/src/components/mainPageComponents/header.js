@@ -16,7 +16,7 @@ componentDidMount = () => {
       menu.setAttribute("aria-hidden", "true");
       icon.focus();
       menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',-1);
+        el.setAttribute('tabIndex',"-1");
       })
     }
     else {
@@ -24,7 +24,7 @@ componentDidMount = () => {
       menu.setAttribute("aria-hidden", "false");
       
       menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',0);
+        el.setAttribute('tabIndex',"0");
       })
     }
   })
@@ -41,7 +41,7 @@ toggleMenu = () => {
       icon.setAttribute("aria-expanded", "true");
       menu.firstElementChild.focus();
       menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',0);
+        el.setAttribute('tabIndex',"0");
       })
     } else if (menu.className === 'menu menu-open') {
       icon.className='image image-closed';
@@ -49,7 +49,7 @@ toggleMenu = () => {
       menu.setAttribute("aria-hidden", "true");
       icon.setAttribute("aria-expanded", "false");
       menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',-1);
+        el.setAttribute('tabIndex',"-1");
       })
       icon.focus();
     }
@@ -114,7 +114,7 @@ toggleMenu = () => {
       </nav>
     <div 
       id="icon" 
-      tabIndex="0"
+      tabIndex="1"
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  

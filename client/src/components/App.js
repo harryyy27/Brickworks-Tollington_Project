@@ -39,23 +39,16 @@ class App extends React.Component {
     focusable[0].focus();
     console.log(focusable);
     document.addEventListener('keydown', (event)=>{
+      console.log(document.activeElement);
       switch(event.key){
         case 'Tab':
-        if(menu.className==="menu menu-open" && document.activeElement===menuBtn){
-          
-         
-
-          menu.firstElementChild.lastElementChild.focus();
+        if(!event.shiftKey &&document.activeElement===menu.lastElementChild.firstElementChild&& menu.className==="menu menu-open"){
+          event.preventDefault();
+          menuBtn.focus();
         }
-        else if(document.activeElement===menu.lastElementChild.firstElementChild){
-          console.log(menuBtn);
-          focusable[0].focus();
-        }
-        else if(event.shiftKey&&document.activeElement===menu.firstElementChild.firstElementChild){
-          menuBtn.focus()
-        }
-        else if(event.shiftKey && document.activeElement===menu && menu.className==="menu menu-open"){
-          menu.lastElementChild.firstElementChild.focus()
+        else if(menu.className==="menu menu-open"&&event.shiftKey&&document.activeElement===menuBtn){
+          event.preventDefault();
+          menu.lastElementChild.firstElementChild.focus();
         }
         break;
         case 'Enter':
