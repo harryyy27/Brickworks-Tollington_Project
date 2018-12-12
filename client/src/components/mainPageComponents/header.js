@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import logoImg from '../../../public/images/brickworks-logo-2.svg';
 
 
 class Nav extends React.Component {
@@ -57,7 +58,11 @@ toggleMenu = () => {
   
   render() {
     return (
+
+      
     <header id="menu-wrapper">
+      <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
+      <p id='name-nav'>Brickworks</p>
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 
