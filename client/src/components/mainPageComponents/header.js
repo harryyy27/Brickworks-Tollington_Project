@@ -72,6 +72,13 @@ toggleMenu = (e) => {
     }
   
 }
+
+toggleOpacity = () => {
+  if (menu.className === 'menu menu-open') {
+    console.log('working');
+    document.body.style.opacity = '0.6';
+  }
+}
   
   render() {
     return (
