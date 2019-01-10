@@ -1,6 +1,6 @@
 import React from 'react';
 // import { render } from 'react-dom';
-import { Route, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/home';
 import ListEvent from './pages/list-event';
 import Nav from './mainPageComponents/header';
@@ -17,6 +17,7 @@ import ContactUs from './pages/contactUs';
 import {Projects} from './pages/projects';
 import {Footer} from './mainPageComponents/footer';
 
+const Navbar = withRouter(props => <Nav {...props }/>);
 class App extends React.Component {
   state = {
     background: 'background-img',
@@ -109,7 +110,7 @@ class App extends React.Component {
   return (
     
     <div>
-      <Nav />
+      <Navbar />
       <Switch>
         <Route exact path='/' component= { Home } />
         <Route path='/social-actions' render={(props) => <SocialActions {...props} extractData={this.extractData} />}/>

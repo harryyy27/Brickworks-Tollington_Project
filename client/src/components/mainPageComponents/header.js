@@ -9,6 +9,12 @@ class Nav extends React.Component {
 //     screensize: 'small'
   
 componentDidMount = () => {
+  const pathname = this.props.location.pathname;
+  console.log(pathname);
+  if(pathname==='/'){
+    const menu = document.getElementById('menu');
+    menu.firstElementChild.firstElementChild.className= "nav-link current-page";
+  }
   window.addEventListener('resize', ()=>{
     if(window.innerWidth<748){
       const menuLinks = document.querySelectorAll('.nav-link')
@@ -31,7 +37,17 @@ componentDidMount = () => {
   })
 }
 
-toggleMenu = () => {
+toggleMenu = (e) => {
+  
+  
+  
+  if(e.target.className==='nav-link'){
+  let oldpage = document.querySelector('.current-page');
+  oldpage.classList.remove('current-page');
+  console.log(e.target);
+  e.target.className = "nav-link current-page";
+  }
+ 
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');
@@ -54,6 +70,7 @@ toggleMenu = () => {
       })
       icon.focus();
     }
+  
 }
   
   render() {
