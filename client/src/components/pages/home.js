@@ -24,7 +24,7 @@ class Home extends React.Component {
                 <p className='hub-description-four'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
             <br/>
             <br/>
-            Find out more and get involved!
+            <strong>Find out more and get involved!</strong>
             </p>
             {/* <p className='hub-description-three'>Brickworks supports local people to contribute to collective action to build the community and create a better society.</p> */}
             <button className='button-large' onClick={this.addEvent}>Next</button>
