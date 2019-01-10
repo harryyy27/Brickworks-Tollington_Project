@@ -5,19 +5,6 @@
 
 }
 
-#logo {
- background: white;
- width:50%;
- margin: auto;
-}
-
-#logo-img {
-  display: block;
-  border: 1px solid black;
-  width: 200;
-  margin: auto;
-  
-}
 /* NAVBAR */
 @media only screen and (max-width: 748px) {
   header {
@@ -175,18 +162,38 @@
 
 }
 
-
-
-
 @media only screen and (min-width: 748px) {
-   header {
+   
+  header {
 
-   }
-   nav {
+  }
+   
+  nav {
      display: flex;
      justify-content: space-between;
-   }
- }
+  }
+
+  #logo {
+    background: white;
+    width:50%;
+    margin: auto;
+  }
+   
+  #logo-img {
+     display: block;
+     width: 150;
+     margin: auto;  
+  }
+   
+  #logo-nav {
+     display: none;
+  }
+   
+  #name-nav {
+     display: none;
+  }
+
+}
 
 /* @media only screen and (min-width: 1070px) { */
    
