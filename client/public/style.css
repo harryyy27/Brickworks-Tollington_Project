@@ -33,9 +33,9 @@
     position: absolute;
     height: 100vh;
     width: 100vw;
-    
+    top: 4rem;
     overflow-y: auto;
-    padding-top: 4rem;
+    
   }
   .menu label {
     width: 100%;
@@ -43,31 +43,31 @@
     transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
   }
   .menu :nth-child(1) {
-    top: 10px;
+    
   }
   .menu :nth-child(2){
-    top: 20px;
-    transition-delay: 0.2s
+    top: 15px;
+    transition-delay: 0.1s
   }
   .menu :nth-child(3) {
     top: 30px;
-    transition-delay: 0.4s
+    transition-delay: 0.2s
   }
   .menu :nth-child(4){
-    top:40px;
-    transition-delay: 0.6s
+    top: 45px;
+    transition-delay: 0.3s
   }
   .menu :nth-child(5){
-    top: 50px;
-    transition-delay: 0.8s
+    top: 60px;
+    transition-delay: 0.4s
   }
   .menu :nth-child(6){
-    top: 60px;
-    transition-delay: 1s
+    top: 75px;
+    transition-delay: 0.5s
   }
   .menu :nth-child(7){
-    top: 70px;
-    transition-delay: 1.2s
+    top: 90px;
+    transition-delay: 0.6s
   }
 
   /* .container p {
@@ -86,7 +86,7 @@
     -webkit-transition: opacity 2s ease-in-out 2s;
    } */
   .menu-closed > label {
-    transform: translate3d(-200vw, 0, 0);
+    transform: translate3d(110vw, 0, 0);
   }
   
   .menu-open > label {
@@ -95,10 +95,9 @@
   
   .nav-link {
     
-    margin: 1rem;
     font-size: 1em;
     color: white;
-    background-color: #525252;
+    background: #CC402F;
     width:100%;
     text-decoration: none;
     display: flex;
