@@ -5,6 +5,8 @@
 
 }
 
+
+
 /* NAVBAR */
 @media only screen and (max-width: 748px) {
   header {
@@ -194,6 +196,11 @@
 
 }
 
+/* NAVBAR */
+
+.current-page {
+  color: aquamarine;
+}
 /* @media only screen and (min-width: 1070px) { */
    
 /* } */
