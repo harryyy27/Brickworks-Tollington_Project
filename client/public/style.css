@@ -22,6 +22,10 @@ footer {
   width: 100%;
   text-align: center;
 }
+p {
+  line-height: 1.5em;
+  font-family: Helvetica, sans-serif;
+}
 #container {
   height: 100vh;
 }
@@ -35,7 +39,7 @@ footer {
     height: 5vh;
     margin: 0.6rem 1rem;
   }
-  
+
   #name-nav {
     color: white;
     font-size: 1.5rem;
