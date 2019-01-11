@@ -110,7 +110,7 @@ class App extends React.Component {
   render () {
   return (
     
-    <div>
+    <div id="container">
       <Navbar />
       <Switch>
         <Route exact path='/' component= { Home } />
