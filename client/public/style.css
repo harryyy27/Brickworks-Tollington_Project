@@ -4,18 +4,7 @@
 
 @media only screen and (max-width: 748px) {
   /*NAVBAR */  
-  #logo-nav {
-    height: 5vh;
-    margin: 0.6rem 1rem;
-  }
-
-  #name-nav {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 1rem 0rem;
-    padding-top: 0.2rem;
-  }
+  
   
   .menu {
     position: absolute;
@@ -135,7 +124,27 @@
   }
 
   /* HOME PAGE */
+  h1 {
+    font-size: 2.5rem;
+    color: grey;
+    text-align: center;
+    padding: 2rem 0rem;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-family: Helvetica,sans-serif;
+    opacity: 0.6;
+    vertical-align: middle;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    color: grey;
+    padding-bottom: 1rem;
+  }
   
+  .button-large {
+    text-align: center;
+  }
 
 }
 
@@ -172,7 +181,7 @@
   }
 
 }
-/* HTML for every page + size*/
+/* HTML relating to every page*/
 html, body {
   width: 100vw;
   height: 100vh;
@@ -205,24 +214,39 @@ p {
   line-height: 1.5em;
   font-family: Helvetica, sans-serif;
 }
+#container {
+  height: 100vh;
+ }
+ #root {
+   height: 100vh;
+ 
+ }
+ .wrapper {
+   position: relative;
+   top: 4rem;
+   min-height: calc(100vh - 7rem);
+   width: 80%;
+   margin: auto;
+ }
+/* NAV-BAR */
+#logo-nav {
+  height: 2rem;
+  padding: 1rem 0rem 1rem 1rem;
+  display: inline-block;
+}
+
+#name-nav {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1rem 0rem;
+  padding-top: 0.2rem;
+  display: inline-block;
+}
+
 #logo {
   text-align: center;
-  padding: 1rem 0rem;
-}
-
-#container {
- height: 100vh;
-}
-#root {
-  height: 100vh;
-
-}
-.wrapper {
-  position: relative;
-  top: 4rem;
-  min-height: calc(100vh - 7rem);
-  width: 80%;
-  margin: auto;
+  padding-bottom: 1rem;
 }
 
 .current-page {

@@ -85,7 +85,7 @@ toggleMenu = (e) => {
       
     <header id="menu-wrapper">
       <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
-      <p id='name-nav'>Brickworks</p>
+      <p id='name-nav'>rickworks</p>
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 
@@ -147,14 +147,14 @@ toggleMenu = (e) => {
                 to='/resources'>Resources & Tips</Link>
         </label>
       </nav>
-    <div 
-      id="icon" 
+    <div  
+      id="icon"
+      className="image image-closed"
       tabIndex="1"
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  
-      aria-expanded='false' 
-      className="image image-closed" 
+      aria-expanded='false'  
       onClick={this.toggleMenu}>
       <span></span>
     </div>
