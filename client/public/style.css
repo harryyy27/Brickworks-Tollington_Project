@@ -1,43 +1,6 @@
 * {
   font-family: 'Source Sans Pro', sans-serif; 
 }
-html, body {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-  
-}
-body {
-  overflow-x: hidden;
-}
-header {
-  height: 4rem;
-  background: #CC402F;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  top: 0;
-}
-footer {
-  padding: 1rem 0rem;
-  height: 1rem;
-  position: relative;
-  top: 4rem;
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-p {
-  line-height: 1.5em;
-  font-family: Helvetica, sans-serif;
-}
-#container {
- height: 100vh;
-}
-#root {
-  height: 100vh;
-
-}
 
 @media only screen and (max-width: 748px) {
   /*NAVBAR */  
@@ -62,6 +25,8 @@ p {
     overflow-y: auto;
     
   }
+
+  /* Menu animation, sliding drawers effect(coined?) */
   .menu label {
     width: 100%;
     position: absolute;
@@ -114,7 +79,7 @@ p {
     flex-direction: column;
   }
   
-  /* navbar icon and animation */
+  /* navbar icon animation */
   
   .image {
     position: absolute;
@@ -170,19 +135,12 @@ p {
   }
 
   /* HOME PAGE */
-  #logo {
-    text-align: center;
-    padding: 1rem 0rem;
-  }
-
-  p {
-    padding: 0.5rem 0rem;
-  }
+  
 
 }
 
 @media only screen and (min-width: 748px) {
-   font-size: 20px;
+   font-size: 50px;
 
   header {
 
@@ -214,17 +172,58 @@ p {
   }
 
 }
-/* WRAPPER for every page*/
+/* HTML for every page + size*/
+html, body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  
+}
+body {
+  overflow-x: hidden;
+}
+header {
+  height: 4rem;
+  background: #CC402F;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  top: 0;
+  z-index: 1;
+}
+footer {
+  padding: 1rem 0rem;
+  height: 1rem;
+  position: relative;
+  top: 4rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+p {
+  padding: 0.5rem 0rem;
+  line-height: 1.5em;
+  font-family: Helvetica, sans-serif;
+}
+#logo {
+  text-align: center;
+  padding: 1rem 0rem;
+}
 
+#container {
+ height: 100vh;
+}
+#root {
+  height: 100vh;
+
+}
 .wrapper {
   position: relative;
   top: 4rem;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 7rem);
   width: 80%;
   margin: auto;
 }
-
-/* NAVBAR */
 
 .current-page {
   color: aquamarine;
