@@ -15,6 +15,12 @@ componentDidMount = () => {
     const menu = document.getElementById('menu');
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
   }
+  else {
+
+    const menumarker = document.getElementById(`${pathname.split('/')[1]}`);
+    console.log(menumarker);
+    menumarker.className = 'nav-link current-page';
+  }
   window.addEventListener('resize', ()=>{
     if(window.innerWidth<748){
       const menuLinks = document.querySelectorAll('.nav-link')
@@ -86,48 +92,54 @@ toggleOpacity = () => {
       
     <header id="menu-wrapper">
       <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
-      <p id='name-nav'>Brickworks</p>
+      <p id='name-nav'>rickworks</p>
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 
            className="menu menu-closed">
         <label htmlFor="home">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="home" 
                 tabIndex={window.innerWidth< 748 ? '-1': '0'} 
                 data-testid="home" 
                 onClick={this.toggleMenu} 
                 to='/'>Home</Link>
         </label>
         <label htmlFor="social-actions">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="social-actions"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'}  
                 data-testid="social-actions" 
                 onClick={this.toggleMenu} 
                 to='/social-actions'>Social Actions</Link>
         </label>
         <label htmlFor="form">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="topten"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'} 
                 data-testid="form" 
                 onClick={this.toggleMenu} 
                 to='/topten'>Start a Social Action</Link>
         </label>
         <label htmlFor="projects">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="projects"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'} 
                 data-testid="projects-page" 
                 onClick={this.toggleMenu} 
                 to='/projects'>Projects</Link>
         </label>
         <label htmlFor="faq">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="faq"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'}  
                 data-testid="faq" 
                 onClick={this.toggleMenu} 
                 to='/faq'>FAQ</Link>
         </label>
         <label htmlFor="inspirations">
-          <Link className='nav-link' 
+          <Link className='nav-link'
+                id="inspirations"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'}  
                 data-testid="inspirations" 
                 onClick={this.toggleMenu} 
@@ -135,20 +147,21 @@ toggleOpacity = () => {
         </label>
         <label htmlFor="resources">
           <Link className='nav-link'
+                id="resources"
                 tabIndex={window.innerWidth< 748 ? '-1': '0'}  
                 data-testid="resources" 
                 onClick={this.toggleMenu} 
                 to='/resources'>Resources & Tips</Link>
         </label>
       </nav>
-    <div 
-      id="icon" 
+    <div  
+      id="icon"
+      className="image image-closed"
       tabIndex="1"
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  
-      aria-expanded='false' 
-      className="image image-closed" 
+      aria-expanded='false'  
       onClick={this.toggleMenu}>
       <span></span>
     </div>

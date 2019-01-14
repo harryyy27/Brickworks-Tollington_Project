@@ -36,9 +36,17 @@ class App extends React.Component {
   componentDidMount = () => {
     const menu = document.getElementById('menu');
     const menuBtn = document.getElementById('icon');
+    /* Setting focus upon page loading */
+    if(window.innerWidth<748){
+      menuBtn.focus();
+    }
+    else {
     const focusable = Array.from(document.querySelectorAll('#icon, button, a, input, select, textarea, [tabIndex]:not([tabIndex="-1"])')).filter(element=> element.tabIndex ===0);
+    if(focusable.length !== 0){
     focusable[0].focus();
-    console.log(focusable);
+    }
+  }
+    /* Tabbing functions */
     document.addEventListener('keydown', (event)=>{
       console.log(document.activeElement);
       switch(event.key){
