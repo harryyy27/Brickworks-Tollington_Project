@@ -61,7 +61,7 @@
     
     font-size: 1em;
     color: white;
-    background: #CC402F;
+    background: black;
     width:100%;
     text-decoration: none;
     display: flex;
@@ -126,7 +126,7 @@
   /* HOME PAGE */
   h1 {
     font-size: 2.5rem;
-    color: grey;
+    color: white;
     text-align: center;
     padding: 2rem 0rem;
     letter-spacing: 0.05em;
@@ -140,10 +140,6 @@
     font-size: 1.25rem;
     color: grey;
     padding-bottom: 1rem;
-  }
-  
-  .button-large {
-    text-align: center;
   }
 
 }
@@ -186,6 +182,8 @@ html, body {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
+  background: black;
+  color: white;
   
 }
 body {
@@ -193,7 +191,7 @@ body {
 }
 header {
   height: 4rem;
-  background: #CC402F;
+  background: black;
   width: 100%;
   position: fixed;
   display: flex;
@@ -210,9 +208,10 @@ footer {
   text-align: center;
 }
 p {
-  padding: 0.5rem 0rem;
+  padding: 1.5rem 0rem;
   line-height: 1.5em;
   font-family: Helvetica, sans-serif;
+  text-align: center;
 }
 #container {
   height: 100vh;
@@ -246,11 +245,21 @@ p {
 
 #logo {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 3rem 0rem;
 }
 
 .current-page {
   color: aquamarine;
+}
+
+.button-large {
+  border: 1px solid white;
+  background: black;
+  color: white;
+  font-size: 24px;
+  margin: auto;
+  display: block;
+
 }
 /* @media only screen and (min-width: 1070px) { */
    
