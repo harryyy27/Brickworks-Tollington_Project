@@ -143,7 +143,7 @@ toggleOpacity = () => {
                 tabIndex={window.innerWidth< 748 ? '-1': '0'}  
                 data-testid="inspirations" 
                 onClick={this.toggleMenu} 
-                to='/inspirations'>Local Inspirational Stories</Link>
+                to='/inspirations'>Local Inspirations</Link>
         </label>
         <label htmlFor="resources">
           <Link className='nav-link'
