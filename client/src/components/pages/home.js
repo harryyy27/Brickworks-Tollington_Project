@@ -18,7 +18,7 @@ class Home extends React.Component {
     return( 
         <div className='wrapper'>
           <main data-testid="home-page">
-          <h1>Get involved!</h1>
+          
           
             <figure id='logo'>
               <img id='logo-img' src={logoImg} alt='Brickworks logo'/>
@@ -26,9 +26,8 @@ class Home extends React.Component {
                 
             <h2 className='hub-description-four'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
             </h2>
-            {/* <p className='hub-description-three'>Brickworks supports local people to contribute to collective action to build the community and create a better society.</p> */}
-            <span>Find out more</span>
-            <button className='button-large' onClick={this.addEvent}>Next</button>
+           
+            <button className='button-large' onClick={this.addEvent}>Get Involved</button>
           </main>
         </div>
     )}
