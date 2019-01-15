@@ -15,6 +15,10 @@ componentDidMount = () => {
     const menu = document.getElementById('menu');
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
   }
+  else if(pathname.indexOf('event-detailed')!==-1){
+    const menuItem=document.getElementById("social-actions");
+    menuItem.className= "nav-link current-page";
+  }
   else {
 
     const menumarker = document.getElementById(`${pathname.split('/')[1]}`);

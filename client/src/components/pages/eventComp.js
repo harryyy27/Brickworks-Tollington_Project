@@ -7,21 +7,23 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
 
   return (
 
-    
-      <ul>
-        <Link key={event_id} to={'/event-detailed/' + event_name} >
-        <li className='li-style1'>{event_name.split('rec')[0]}</li>
+    <div className="mini-wrapper">
         
-        <li>{event_description}</li>
-        <li>{event_date_time}</li>
-        <li>{event_location}</li>
-        <li>{recurring_event_description}</li>
+          <h3>{event_name.split('rec')[0]}</h3>
+          
+          <time>
+            Time: &nbsp;<span>{event_date_time}</span> &nbsp;<span>{recurring_event_description}</span>
+          </time>
+          <h4>Location: {event_location}</h4>
+          <p>{event_description}</p>
         {/* <li>{fullname_event_organiser}</li>
         <li>{email_event_organiser}</li>
         <li>{telephone_event_organiser}</li> */}
+        <Link className="link" key={event_id} to={'/event-detailed/' + event_name} >
+        Find out more
         </Link >
-      </ul>
-    
+      </div>
+  
   )
 }
 
@@ -43,13 +45,16 @@ const SingleEvent = ({ event_id, event_name, event_description, event_date_time,
     if(Photo){
   return (
     <div key={event_id} >
-      <li> {event_description}</li>
-      <li> {event_date_time}</li>
-      <li> {event_location}</li>
-      <li> {fullname_event_organiser}</li>
-      <li> {email_event_organiser}</li>
-      <li> {telephone_event_organiser}</li>
       <img className='single-event-img' src={Photo[0].url}/>
+      <time>
+        Time: &nbsp; <span> {event_date_time}</span> &nbsp; Location: &nbsp;<span> {event_location}</span>
+      </time>
+      <p> {event_description}</p>
+      <h3>Contact us</h3>
+      <span>Name: {fullname_event_organiser}</span>
+      <span>E-mail: {email_event_organiser}</span>
+      <span>Telephone: {telephone_event_organiser}</span>
+      
     </div>
   )
 }
