@@ -24,8 +24,8 @@ class Home extends React.Component {
               <img id='logo-img' src={logoImg} alt='Brickworks logo'/>
             </figure> 
                 
-            <h2 className='hub-description-four'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
-            </h2>
+            <p className='hub-description-four'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
+            </p>
            
             <button className='button-large' onClick={this.addEvent}>Get Involved</button>
           </main>
