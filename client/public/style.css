@@ -354,7 +354,6 @@ textarea {
 
 html, body {
   width: 100vw;
-  height: 100vh;
   max-width: 100%;
   background: black;
   color: white; 
@@ -364,10 +363,6 @@ body {
   overflow-x: hidden;
 }
 
-.front {
-  z-index: 1;
-}
-
 header {
   display: flex;
   height: 4rem;
@@ -375,8 +370,6 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  
-  
 }
 
 footer {
@@ -409,17 +402,17 @@ h2 {
 h3 {
   font-size: 1.5rem;
   color: grey;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 h4 {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 p {
   
   font-size: 1rem;
   color: grey;
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
   line-height: 1.5em;
   font-family: "Open Sans", "sans-serif";
 }
@@ -465,7 +458,7 @@ p {
 
 .button-large {
   border: 1px solid white;
-  padding: 2px;
+  padding: 0.4em;
   border-radius: 12px;
   background: black;
   color: white;
@@ -483,9 +476,6 @@ time {
   padding-bottom: 0.5rem;
   display:block;
   font-size: 1rem;
-}
-.link {
-  z-index: 1;
 }
 
 /* FAQ Page */
@@ -510,7 +500,10 @@ time {
 
 .top-ten-li {
   padding: 0.5rem 0.7rem;
+  
   line-height: 1.3;
+  color: grey;
+  font-family: "Open Sans", "sans serif";
 }
 
 .top-ten-link {
@@ -525,12 +518,12 @@ time {
 }
 .single-event {
   display: block;
-  padding: 0.5rem 0rem;
+  padding: 0.75rem 0rem;
 }
 /*Projects*/
 #bike-img {
-  width: 50%;
-  margin: auto;
+  width: 60vw;
+  padding: 0rem 10vw 1.5rem 10vw;
 }
 
 /* Form */
