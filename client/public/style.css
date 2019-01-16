@@ -1,8 +1,6 @@
 @media only screen and (max-width: 748px) {
   /*NAVBAR */  
-  .front {
-    z-index: 1;
-  }
+
   .menu {
     position: absolute;
     height: 100vh;
@@ -345,6 +343,10 @@ body {
   overflow-x: hidden;
 }
 
+.front {
+  z-index: 1;
+}
+
 header {
   display: flex;
   height: 4rem;
@@ -461,8 +463,26 @@ time {
 }
 .link {
   z-index: 1;
-
 }
+
+.question {
+  font-weight: bold;
+}
+
+.answer {
+  font-style: italic;
+}
+
+.faq-anchor {
+  text-decoration: none;
+}
+
+.top-ten-li {
+  
+}
+
+
+
 /* @media only screen and (min-width: 1070px) { */
    
 /* } */
