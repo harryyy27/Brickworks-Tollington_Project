@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 
 const TopTen= () => (
-    <div data-testid="topten-page" className='wrapper'>
+    <main data-testid="topten-page" className='wrapper'>
         <h1>Top Ten Tips</h1>
-        <main>
             <p className='question'>Engaging in social action takes time, energy and passion, here are our top 10 tips to get you started:</p>
             <ol>
                 <li className='top-ten-li'>Identify a problem, challenge or issue in your neighbourhood and be specific about what you want to tackle.</li>
@@ -29,8 +28,7 @@ const TopTen= () => (
             <label htmlFor="list-event">
                 <Link to='/list-event'><p className='top-ten-link'>Click here to register an interest to promote a social action</p></Link>
             </label>
-        </main>
-    </div>
+    </main>
 )
 
 export {TopTen};
