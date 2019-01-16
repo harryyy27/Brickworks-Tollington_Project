@@ -69,7 +69,7 @@
     height: calc((100vh - 4rem)/7);
     line-height: calc((100vh - 4rem)/7);
     vertical-align:middle;
-    padding: 4rem;
+    padding-left: 4rem;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -144,7 +144,7 @@
   }
   
   #name-nav {
-  display: none;
+  
   }
 
  
