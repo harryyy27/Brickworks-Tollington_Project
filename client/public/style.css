@@ -129,6 +129,9 @@
 
   /* HOME PAGE */
 
+  .top-ten-li {
+    padding: 0.5rem 0rem;
+}
 
 }
 
@@ -469,6 +472,10 @@ time {
   font-weight: bold;
 }
 
+.question-two {
+  padding: 0;
+}
+
 .answer {
   font-style: italic;
 }
@@ -478,7 +485,14 @@ time {
 }
 
 .top-ten-li {
-  
+  padding: 0.5rem 0.7rem;
+  line-height: 1.3;
+}
+
+.top-ten-link {
+  padding: 1rem 0rem;
+  text-decoration: none;
+  color: blue;
 }
 
 
