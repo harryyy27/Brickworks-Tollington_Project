@@ -104,7 +104,7 @@ toggleOpacity = () => {
     return (
 
       
-    <header id="menu-wrapper" class="front">
+    <header id="menu-wrapper">
       <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
       <p id='name-nav'>rickworks</p>
       <nav id="menu" 

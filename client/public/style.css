@@ -1,8 +1,6 @@
 @media only screen and (max-width: 748px) {
   /*NAVBAR */  
-  .front {
-    z-index: 1;
-  }
+ 
   .menu {
     position: absolute;
     height: 100vh;
@@ -419,7 +417,9 @@ p {
 }
 
 /* NAV-BAR */
-
+.front {
+  z-index: 1;
+}
 /* #name-nav {
   color: white;
   font-size: 1.5rem;
@@ -462,6 +462,20 @@ time {
 .link {
   z-index: 1;
 
+}
+
+/* Single Event Page */
+.single-event-img {
+  padding-bottom: 2rem;
+}
+.single-event {
+  display: block;
+  padding: 0.5rem 0rem;
+}
+/*Projects*/
+#bike-img {
+  width: 50%;
+  margin: auto;
 }
 /* @media only screen and (min-width: 1070px) { */
    
