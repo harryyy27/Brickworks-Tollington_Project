@@ -7,7 +7,13 @@ class Nav extends React.Component {
 
 //   state = {
 //     screensize: 'small'
+componentDidDisappear = (menu,header) => {
+  setTimeout(()=>{
+    menu.className='menu menu-closed invisible';
+    header.classList.remove("front");
+  },700)
   
+}
 componentDidMount = () => {
   const pathname = this.props.location.pathname;
   console.log(pathname);
@@ -61,7 +67,9 @@ toggleMenu = (e) => {
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');
-    if (menu.className === 'menu menu-closed') {
+    const header = document.querySelector("header");
+    if (menu.className === 'menu menu-closed invisible') {
+      header.classList.add("front");
       icon.className='image image-open';
       menu.className='menu menu-open';
       menu.setAttribute("aria-hidden", "false");
@@ -71,6 +79,7 @@ toggleMenu = (e) => {
         el.setAttribute('tabIndex',"0");
       })
     } else if (menu.className === 'menu menu-open') {
+      
       icon.className='image image-closed';
       menu.className='menu menu-closed';
       menu.setAttribute("aria-hidden", "true");
@@ -79,6 +88,7 @@ toggleMenu = (e) => {
         el.setAttribute('tabIndex',"-1");
       })
       icon.focus();
+      this.componentDidDisappear(menu,header);
     }
   
 }
@@ -94,13 +104,13 @@ toggleOpacity = () => {
     return (
 
       
-    <header id="menu-wrapper">
+    <header id="menu-wrapper" class="front">
       <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
       <p id='name-nav'>rickworks</p>
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 
-           className="menu menu-closed">
+           className="menu menu-closed invisible">
         <label htmlFor="home">
           <Link className='nav-link'
                 id="home" 
