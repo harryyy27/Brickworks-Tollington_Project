@@ -135,7 +135,9 @@
 }
 
 @media only screen and (min-width: 749px) and (max-width: 1080px) {
-
+  html {
+    font-size: 20px;
+   }
 
   #logo-nav {
     margin: 0.5rem;
@@ -147,14 +149,22 @@
   
   }
 
+  .nav-link {
+    width: 60vw
+  }
  
- 
- 
+  .menu-closed > label {
+    transform: translate3d(110vw, 0, 0);
+  }
+  .menu-open > label {
+    transform: translate3d(40vw, 0, 0);
+  }
 }
 
 @media only screen and (min-width: 1081px) {
-   font-size: 50px;
-
+  html {
+   font-size: 24px;
+  }
   header {
 
   }
