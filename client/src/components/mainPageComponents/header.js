@@ -18,8 +18,10 @@ componentDidMount = () => {
   const pathname = this.props.location.pathname;
   console.log(pathname);
   if(pathname==='/'){
+    if(window.innerWidth<=1080){
     const menu = document.getElementById('menu');
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
+    }
   }
   else if(pathname.indexOf('event-detailed')!==-1){
     const menuItem=document.getElementById("social-actions");
@@ -42,6 +44,7 @@ componentDidMount = () => {
         el.setAttribute('tabIndex',"-1");
       })
     }
+    
     else {
       const menuLinks = document.querySelectorAll('.nav-link')
       menu.setAttribute("aria-hidden", "false");
@@ -49,6 +52,14 @@ componentDidMount = () => {
       menuLinks.forEach(el => {
         el.setAttribute('tabIndex',"0");
       })
+    }
+    if(window.innerWidth>=1081){
+      const home = document.getElementById('home-label');
+      home.className = "invisible";
+    }
+    else {
+      const home = document.getElementById('home-label');
+      home.className = "";
     }
   })
 }
@@ -104,19 +115,26 @@ toggleOpacity = () => {
     document.body.style.opacity = '0.6';
   }
 }
+
+takeMeHome = () => {
+  this.props.history.push('/');
+}
   
   render() {
     return (
 
       
     <header id="menu-wrapper">
-      <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
-      <p id='name-nav'>rickworks</p>
+      <div id="logo-wrapper" onClick={this.takeMeHome}>
+        <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
+        <p id='name-nav'>RICKWORKS</p>
+      </div>
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 
            className="menu menu-closed invisible">
-        <label htmlFor="home">
+           
+        <label id="home-label" htmlFor="home" className={window.innerWidth>=1080 ? "invisible": ""}>
           <Link className='nav-link'
                 id="home" 
                 tabIndex={window.innerWidth< 748 ? '-1': '0'} 
@@ -124,6 +142,7 @@ toggleOpacity = () => {
                 onClick={this.toggleMenu} 
                 to='/'>Home</Link>
         </label>
+           
         <label htmlFor="social-actions">
           <Link className='nav-link'
                 id="social-actions"

@@ -63,12 +63,15 @@ const SingleEvent = ({ event_id, event_name, event_description, event_date_time,
 else {
   return(
     <div key={event_id} >
-    <li> {event_description}</li>
-    <li> {event_date_time}</li>
-    <li> {event_location}</li>
-    <li> {fullname_event_organiser}</li>
-    <li> {email_event_organiser}</li>
-    <li> {telephone_event_organiser}</li>
+    <time>
+        Time: &nbsp; <span> {event_date_time}</span>
+      </time>
+      <span className="single-event">Location: &nbsp; {event_location}</span>
+      <p> {event_description}</p>
+      <h3>Contact us</h3>
+      <span className="single-event">Name: {fullname_event_organiser}</span>
+      <span className="single-event">E-mail: {email_event_organiser}</span>
+      <span className="single-event">Telephone: {telephone_event_organiser}</span>
     
   </div>
 
