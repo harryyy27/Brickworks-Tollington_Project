@@ -360,6 +360,10 @@ a:hover {
   margin: 0.3rem 0rem;
 }
 
+.a-links-three {
+  display: flex;
+}
+
 #container {
   height: 100vh;
 }
