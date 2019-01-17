@@ -18,7 +18,8 @@ const TopTen= () => (
                 <li className='top-ten-li'>Share the impact of your action in creative and imaginative ways to capture attention.</li>
                 <li className='top-ten-li'>Don't give up, have patience and be committed.</li>
             </ol>
-        
+
+            <div className='top-ten-links'>
             <label htmlFor="all-events">
                 <Link to='/contactUs'><p className='top-ten-link'>Click here to register an interest to start a social action!</p></Link>
             </label>
@@ -28,6 +29,7 @@ const TopTen= () => (
             <label htmlFor="list-event">
                 <Link to='/list-event'><p className='top-ten-link'>Click here to register an interest to promote a social action</p></Link>
             </label>
+            </div>
     </main>
 )
 

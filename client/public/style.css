@@ -311,11 +311,15 @@ p {
   font-size: 1rem;
   color: grey;
   padding-bottom: 0.75rem;
-  line-height: 1.5em;
+  line-height: 1.2em;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  /* color: blue; */
 }
 
 #container {
@@ -385,10 +389,12 @@ time {
 
 .question {
   font-weight: bold;
+  color: #37414b;
 }
 
 .question-two {
   padding: 0;
+  columns: #37414b;
 }
 
 .answer {
@@ -404,8 +410,12 @@ time {
 .top-ten-li {
   padding: 0.5rem 0rem;
   
-  line-height: 1.3;
+  line-height: 1.2;
   color: grey;
+}
+
+.top-ten-links {
+  padding: 1rem 0rem;
 }
 
 .top-ten-link {
@@ -425,7 +435,7 @@ time {
 /*Projects*/
 #bike-img {
   width: 60vw;
-  padding: 0rem 10vw 1.5rem 10vw;
+  padding: 0rem 10vw 2rem 10vw;
 }
 
 /* Form */
@@ -456,4 +466,10 @@ time {
 
 .checkbox {
   margin: 0rem 0rem 0rem 1rem;
+}
+
+/* Resouces */
+
+.resource-links {
+  padding: 2rem 0rem;
 }
