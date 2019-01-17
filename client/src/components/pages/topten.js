@@ -21,13 +21,13 @@ const TopTen= () => (
 
             <div className='top-ten-links'>
             <label htmlFor="all-events">
-                <Link to='/contactUs'><p className='top-ten-link'>Click here to register an interest to start a social action!</p></Link>
+                <Link to='/contactUs'><p className='a-links'>Click here to register an interest to start a social action!</p></Link>
             </label>
 
             <p className='question-two'>I am already carrying out a social action, I want to collaborate with others to build it further</p>
             
             <label htmlFor="list-event">
-                <Link to='/list-event'><p className='top-ten-link'>Click here to register an interest to promote a social action</p></Link>
+                <Link to='/list-event'><p className='a-links'>Click here to register an interest to promote a social action</p></Link>
             </label>
             </div>
     </main>

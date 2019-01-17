@@ -19,7 +19,7 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
         {/* <li>{fullname_event_organiser}</li>
         <li>{email_event_organiser}</li>
         <li>{telephone_event_organiser}</li> */}
-        <Link className="link" key={event_id} to={'/event-detailed/' + event_name} >
+        <Link className="a-links" key={event_id} to={'/event-detailed/' + event_name} >
         Find out more
         </Link >
       </div>
