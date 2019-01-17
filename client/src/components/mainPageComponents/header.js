@@ -69,15 +69,20 @@ toggleMenu = (e) => {
     const menuLinks = document.querySelectorAll('.nav-link');
     const header = document.querySelector("header");
     if (menu.className === 'menu menu-closed invisible') {
+      
       header.classList.add("front");
       icon.className='image image-open';
-      menu.className='menu menu-open';
-      menu.setAttribute("aria-hidden", "false");
-      icon.setAttribute("aria-expanded", "true");
-      menu.firstElementChild.focus();
-      menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',"0");
+      menu.className='menu menu-closed';
+      setTimeout(()=>{
+        menu.className='menu menu-open';
+        menu.setAttribute("aria-hidden", "false");
+        icon.setAttribute("aria-expanded", "true");
+        menu.firstElementChild.focus();
+        menuLinks.forEach(el => {
+          el.setAttribute('tabIndex',"0");
+        },1)
       })
+     
     } else if (menu.className === 'menu menu-open') {
       
       icon.className='image image-closed';
