@@ -80,9 +80,7 @@
   }
   
   /* navbar icon animation */
-  .invisible {
-    display: none;
-  }
+  
   .image {
     position: absolute;
     right: 1rem;
@@ -181,25 +179,21 @@ textarea {
   }
 }
 
-/* form */
 
-.form-box {
-  width: 21rem;
-  height: 2rem;
-}
 
 @media only screen and (min-width: 1081px) {
   html {
-   font-size: 24px;
+   font-size: 22px;
   }
   header {
-
+    z-index: 1;
   }
    
   nav {
      width: 100vw;
      display: flex;
-     margin: 1.5rem;
+    
+     
      justify-content: space-evenly;
   }
 
@@ -214,6 +208,7 @@ textarea {
      width: 150;
      margin: auto;  
   }
+  
 
   /* #name-nav {
     color: white;
@@ -229,21 +224,43 @@ textarea {
     padding: 1rem 0rem 1rem 1rem;
     display: inline-block;
   } */
+  #logo-wrapper {
+    width: 20vw;
+
+  }
 
   #logo-nav {
-    display: none;
+    height: 1.5rem;
+    padding: 1rem 0rem;
   }
     
   #name-nav {
-    display: none;
+    position: absolute;
+    left: 0.75rem;
+    top: 0rem;
+    line-height: 4rem;
+    vertical-align: center;
+    padding: 0;
+    color: white;
   }
 
   .nav-link {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
+    line-height: 4rem;
+    vertical-align: center;;
+    font-size: 0.8rem;
   }
-  
+  #menu {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+  }
+  #menu label {
+    height: 4rem;
+  }
   #logo {
     text-align: center;
     padding-bottom: 1rem;
@@ -426,7 +443,9 @@ time {
 
 /* Single Event Page */
 .single-event-img {
-  padding-bottom: 2rem;
+  padding: 2rem 10vw;
+  width: 60vw;
+  
 }
 .single-event {
   display: block;
@@ -442,6 +461,11 @@ time {
 
 .form {
   
+}
+
+.form-box {
+  width: 21rem;
+  height: 2rem;
 }
 
 .mobile-p {
@@ -472,4 +496,10 @@ time {
 
 .resource-links {
   padding: 2rem 0rem;
+}
+
+/* ///// */
+
+.invisible {
+  display: none;
 }
