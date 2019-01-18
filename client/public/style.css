@@ -496,7 +496,10 @@ time {
 }
 
 /* Form */
-
+.validate {
+  display: inline-block;
+  width: 1rem;
+}
 .form-box {
   width: 21rem;
   height: 2rem;
@@ -526,7 +529,9 @@ time {
   margin: 0rem 0rem 0rem 1rem;
 
 }
-
+.red-asterisk {
+  color: red;
+}
 /* Resouces */
 
 .resource-links {
