@@ -196,19 +196,29 @@ textarea {
      
      justify-content: space-evenly;
   }
-
+ /*HOME PAGE */
   #logo {
     background: white;
-    width:50%;
+    width:55vw;
     margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    
   }
    
   #logo-img {
      display: block;
-     width: 150;
-     margin: auto;  
+     width: 50%;
+     margin: auto; 
+     float: left; 
   }
-  
+  .intro {
+    font-size: 1.7rem;
+    text-align: left;
+    font-style: italic;
+  }
 
   /* #name-nav {
     color: white;
@@ -226,6 +236,8 @@ textarea {
   } */
   #logo-wrapper {
     width: 20vw;
+    position:relative;
+    left:2vw;
 
   }
 
@@ -311,12 +323,12 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  color: #color: #37414b;
+  color: #37414b;
   padding-bottom: 1.5rem;
 }
 h3 {
   font-size: 1.5rem;
-  color: #color: #37414b;
+  color: #37414b;
   padding-bottom: 1rem;
 }
 h4 {
@@ -484,7 +496,10 @@ time {
 }
 
 /* Form */
-
+.validate {
+  display: inline-block;
+  width: 1rem;
+}
 .form-box {
   width: 21rem;
   height: 2rem;
@@ -514,7 +529,9 @@ time {
   margin: 0rem 0rem 0rem 1rem;
 
 }
-
+.red-asterisk {
+  color: red;
+}
 /* Resouces */
 
 .resource-links {

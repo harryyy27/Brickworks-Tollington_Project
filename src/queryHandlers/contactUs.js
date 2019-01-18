@@ -25,7 +25,7 @@ exports.post = (req, res) => {
   mailOpts = {
     from: formData.name + ' &lt;' + formData.email + '&gt;',
     // to: `sangitasunuwar@gmail.com`,
-    to: `sangitasunuwar@gmail.com`,
+    to: `harryyy27@gmail.com`,
     // `${result['color 5'] ? 'color 5 exists!' : 'color 5 does not exist!'}`
     subject: 'New message from contact form at Start a social action at Brickworks app',
     text: `name: ${formData.name} 
@@ -46,7 +46,7 @@ interested in Community Organisers training: ${formData.trainCommunityAdviser}`
   mailOpts = {
     from: formData.name + ' &lt;' + formData.email + '&gt;',
     // to: EMAIL,
-    to: `sangitasunuwar@gmail.com`,
+    to: `harryyy27@gmail.com`,
     subject: 'New message from contact form at promote/collaborate my social action at Brickworks app',
     // text: `${formData.name} (${formData.email}) says: ${formData.description}`
     text: `name: ${formData.name} 
