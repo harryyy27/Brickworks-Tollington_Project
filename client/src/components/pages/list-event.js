@@ -20,7 +20,9 @@ class ListEvent extends React.Component {
       descriptionValid: false,
       formValid: false
   }
-
+  componentDidMount = () => {
+    window.scrollTo(0,0);
+  }
   handleChange = event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;

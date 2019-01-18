@@ -34,6 +34,7 @@ class App extends React.Component {
     }
   }
   componentDidMount = () => {
+    
     const menu = document.getElementById('menu');
     const menuBtn = document.getElementById('icon');
     /* Setting focus upon page loading */

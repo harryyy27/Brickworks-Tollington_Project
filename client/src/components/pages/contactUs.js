@@ -15,6 +15,9 @@ class ContactUs extends React.Component {
     descriptionValid: false,
     formValid: false
   }
+  componentDidMount = () => {
+    window.scrollTo(0,0);
+  }
   handleChange = event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -95,9 +98,8 @@ console.log('BEFORE SWITCH', this.state.nameValid);
 
   render() {
     return (
-    <div className='wrapper'>
+    <main className='wrapper'>
     <h1>Contact Us</h1>
-    <main>
     <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
       <form onSubmit={this.handleSubmit}>
         
@@ -139,12 +141,11 @@ console.log('BEFORE SWITCH', this.state.nameValid);
           <button id="form-button" className="button-large" disabled= { !this.state.formValid} type="submit">Submit</button>
         </div>
       </form>
-    </main>
     <div>
       <FormErrors formErrors={this.state.formErrors} />
     </div>
 
-    </div>
+    </main>
     );
   }
 }
