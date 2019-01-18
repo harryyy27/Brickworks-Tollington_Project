@@ -124,14 +124,14 @@ class App extends React.Component {
       <Switch>
         <Route exact path='/' component= { Home } />
         <Route path='/social-actions' render={(props) => <SocialActions {...props} extractData={this.extractData} />}/>
-        <Route path='/list-event' component= { ListEvent } />
+        <Route path='/promote-social-action' component= { ListEvent } />
        
         <Route path='/event-detailed' render={(props) => <EventDetailed {...props} data={this.state.data} />}/>
         <Route path='/faq' component = {Faq} />
         <Route path='/resources' component = {Resources} />
         <Route path ='/inspirations' component = {Inspiration} />
         {/* <Route path ='/things-to-think-about' component = {TopTen} /> */}
-        <Route path ='/contactUs' component = {ContactUs} />
+        <Route path ='/start-social-action' component = {ContactUs} />
         <Route path ='/topten' component = {TopTen} />
         <Route path ='/projects' component = {Projects} />
         <Route path ='/error500' component = {Error500} />

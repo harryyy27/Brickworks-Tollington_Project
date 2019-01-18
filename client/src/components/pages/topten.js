@@ -27,13 +27,13 @@ render() {
 
             <div className='top-ten-links'>
             <label htmlFor="all-events">
-                <Link to='/contactUs'><p className='a-links'>Click here to register an interest to start a social action!</p></Link>
+                <Link to='/start-social-action'><p className='a-links'>Click here to register an interest to start a social action!</p></Link>
             </label>
 
             <p className='question-two'>I am already carrying out a social action, I want to collaborate with others to build it further</p>
             
             <label htmlFor="list-event">
-                <Link to='/list-event'><p className='a-links'>Click here to register an interest to promote a social action</p></Link>
+                <Link to='/promote-social-action'><p className='a-links'>Click here to register an interest to promote a social action</p></Link>
             </label>
             </div>
     </main>
