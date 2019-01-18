@@ -165,7 +165,7 @@
   }
 
   textarea {
-    max-width: 80vw;
+    /* min-width: 80vw; */
   }
 
   /* Single Event */
@@ -253,6 +253,7 @@
      margin: auto; 
      float: left; 
   }
+
   .intro {
     font-size: 1.7rem;
     text-align: left;
@@ -607,6 +608,7 @@ time {
 
 .mobile-p {
   padding-bottom: 0;
+  font-weight: bold;
 }
 
 .form-label {
@@ -628,9 +630,15 @@ time {
 .checkbox {
   margin: 0rem 0rem 0rem 1rem;
 }
+
+textarea {
+  /* min-width: 40vw; */
+}
+
 .red-asterisk {
   color: red;
 }
+
 /* Resouces */
 
 .resource-links {
