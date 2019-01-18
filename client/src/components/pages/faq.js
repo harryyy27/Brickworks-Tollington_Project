@@ -2,6 +2,11 @@ import React from 'react';
 
 
 class Faq extends React.Component {
+
+componentDidMount = () => {
+    window.scrollTo(0,0);
+}
+
     render() {
         return(
     <div>

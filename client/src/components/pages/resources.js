@@ -1,6 +1,13 @@
 import React from 'react';
  
-const Resources = () => (
+class Resources extends React.Component {
+
+componentDidMount = () => {
+    window.scrollTo(0,0);
+}
+    
+render() {
+    return(
     <main className='wrapper'>
         <h1 data-testid="resources-page">Resources</h1> 
         <p className="question">Engaging in social action takes time, energy and passion.
@@ -37,7 +44,6 @@ const Resources = () => (
             <li className='top-ten-li'>Don't give up, have patience and be committed.</li>
         </ol>
         
-
         <div className='resource-links'> 
         <p className='question'>Here are some useful links to get you started:</p>
             <div className='resource-link'>
@@ -45,11 +51,9 @@ const Resources = () => (
             <a className='a-links a-links-two' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/591799/Leadership_and_culture_change_to_enable_social_action.pdf' target="_blank">Leadership and culture change</a>
             <a className='a-links a-links-two' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/591805/Enabling_social_action_methodology.pdf' target="_blank">Methodology</a>
             </div>
-        </div>
-        
+        </div> 
     </main>
-   
-
-)
-
+    )
+    }
+}
 export {Resources};
