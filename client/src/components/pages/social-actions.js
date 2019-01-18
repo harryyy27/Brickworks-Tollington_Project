@@ -69,9 +69,6 @@ render() {
       
   <UpcomingEvents allEvents={this.state.allEvents} />
   <PastEvents pastEvents={this.state.pastEvents}/>    
-    
-  <br></br>
-  <br></br> 
 
   <button className='button-large' onClick={this.addEvent}>Express Interest</button>
   </main>

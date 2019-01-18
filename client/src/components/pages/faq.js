@@ -25,7 +25,7 @@ componentDidMount = () => {
                      <li><p className='question'>Will it cost me to hire a meeting space at Brickworks and am I limited to specific days or times?</p>
                 <p className='answer'>"As we are developing Brickworks as a Social Action Hub we want to encourage local people to use the facilities this community centre offers. Brickworks is open seven days a week and from 08:00 through to 21:00 most days. We intend to offer the meeting space for free. Get in touch with us at Brickworks to find out more."</p></li>       
                      <li><p className='question'>How are my personal details that I am entering being used?</p></li>
-                <a className='a-links a-links-three' href='../../../public/assets/privacy-policy-hcca.pdf'>"Click here to read the Brickworks Social Action Hub privacy policy</a>
+                <a className='a-links a-links-three' href='../../../public/assets/privacy-policy-hcca.pdf'>Click here to read the Brickworks Social Action Hub privacy policy</a>
             </ul>
         </main>
         </div>
