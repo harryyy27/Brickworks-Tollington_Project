@@ -19,7 +19,7 @@ class Inspiration extends React.Component {
                 We are now supporting local people to develop their own social actions, to increase the sense of power and forge relationships with those providing public services to explore how local people can be more involved in local decision making and how they might better influence service provision.
             </p>
             
-        <h2>The 'locality' initiative in Tollington</h2>
+        <h2 className='h2-two'>The 'locality' initiative in Tollington</h2>
             <p>
                 Islington Council has chosen the ward of Tollington to explore and develop a 'Locality' initiative that aims to develop, define, and test the 'community' aspect of the Homes and Communities offer. A team of 11 staff from Homes and Communities and key local partner are engaging and collaborating to ensure that Homes and Communities are connected to and knowledgeable about the communities that they work in.
             </p>

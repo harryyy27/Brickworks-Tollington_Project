@@ -46,7 +46,7 @@ const SingleEvent = ({ event_id, event_name, event_description, event_date_time,
   return (
     <div key={event_id} >
       <img className='single-event-img' src={Photo[0].url}/>
-      
+      <h3>Event Information</h3>
       <time>
         Time: &nbsp; <span> {event_date_time}</span>
       </time>
