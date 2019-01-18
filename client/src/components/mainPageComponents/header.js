@@ -27,6 +27,14 @@ componentDidMount = () => {
     const menuItem=document.getElementById("social-actions");
     menuItem.className= "nav-link current-page";
   }
+  else if(pathname.indexOf('start-social-action')!==-1){
+    const menuItem=document.getElementById("topten");
+    menuItem.classNAme = "nav-link current-page";
+  }
+  else if(pathname.indexOf("promote-social-action")!==-1){
+    const menuItem=document.getElementById("topten");
+    menuItem.className = "nav-link current-page";
+  }
   else {
 
     const menumarker = document.getElementById(`${pathname.split('/')[1]}`);
