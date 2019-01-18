@@ -55,7 +55,9 @@ state = {
         <div className='wrapper'>
         <h1 data-testid="social-actions-page">Social Actions</h1>
         <main>
-        <h3>loading...</h3>
+        <div className='loading-div'>
+          <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
         </main>
         </div>
       )
