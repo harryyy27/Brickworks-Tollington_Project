@@ -210,21 +210,34 @@
      display: flex;
      justify-content: space-evenly;
   }
-
+ /*HOME PAGE */
   #logo {
     background: white;
-    width:50%;
+    width:55vw;
     margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    
   }
    
   #logo-img {
      display: block;
-     width: 150;
-     margin: auto;  
+     width: 50%;
+     margin: auto; 
+     float: left; 
+  }
+  .intro {
+    font-size: 1.7rem;
+    text-align: left;
+    font-style: italic;
   }
   
   #logo-wrapper {
     width: 20vw;
+    position:relative;
+    left:2vw;
 
   }
 
@@ -546,7 +559,10 @@ time {
 }
 
 /* Form */
-
+.validate {
+  display: inline-block;
+  width: 1rem;
+}
 .form-box {
   width: 21rem;
   height: 2rem;
@@ -575,7 +591,9 @@ time {
 .checkbox {
   margin: 0rem 0rem 0rem 1rem;
 }
-
+.red-asterisk {
+  color: red;
+}
 /* Resouces */
 
 .resource-links {

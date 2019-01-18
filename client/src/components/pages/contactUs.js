@@ -1,5 +1,7 @@
 import React from 'react';
 import {FormErrors} from './eventComp';
+import tickIcon from '../../../public/images/tick.png';
+import crossIcon from '../../../public/images/cancel.svg';
 
 class ContactUs extends React.Component {
   state = {
@@ -15,9 +17,14 @@ class ContactUs extends React.Component {
     descriptionValid: false,
     formValid: false
   }
+  componentDidMount = () => {
+    window.scrollTo(0,0);
+  }
   handleChange = event => {
     const target = event.target;
+    
     const value = target.type === 'checkbox' ? target.checked : target.value;
+    
     // if(target.type === 'checkbox'){
     // const value = (target.checked)? 'Yes': 'No';
     // }
@@ -39,17 +46,44 @@ console.log('BEFORE SWITCH', this.state.nameValid);
       case 'name':
       nameValid = (value.length >=2 ) 
       fieldValidationErrors.name = nameValid ? '' : ' is too short' ;
+      const nicon = document.getElementById("name-icon");
+      if(nameValid){
+        nicon.src=tickIcon;
+        nicon.className = "validate"
+      }
+      else {
+        nicon.src=crossIcon;
+        nicon.className = "validate"
+      }
       break;
       case 'email':
       //negated emailValid twice as (value.match(..)) gives null or some other value, we need to turn that to boolean, true or false for readability
       emailValid = !(!(value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ) );
       fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+      const eicon = document.getElementById("email-icon");
+      if(emailValid){
+        eicon.src=tickIcon;
+        eicon.className = "validate"
+      }
+      else {
+        eicon.src=crossIcon;
+        eicon.className = "validate"
+      }
       break;
       
       case 'description':
       // descriptionValid = (value != '');
       descriptionValid = (value.length >= 5);
       fieldValidationErrors.description = descriptionValid ? '' : ' is too short' ;
+      const dicon = document.getElementById("des-icon");
+      if(descriptionValid){
+        dicon.src=tickIcon;
+        dicon.className = "validate"
+      }
+      else {
+        dicon.src=crossIcon;
+        dicon.className = "validate"
+      }
       break;
 
       default:
@@ -71,6 +105,8 @@ console.log('BEFORE SWITCH', this.state.nameValid);
 
   handleSubmit = event => {
     event.preventDefault();
+    if(this.state.formValid){
+    
     const data = JSON.stringify({
       startSocialAction: this.state
     });
@@ -91,25 +127,61 @@ console.log('BEFORE SWITCH', this.state.nameValid);
     this.setState({ name: '', email: '', phone: '', description: '', cntWithCommunityAdviser: false,
     trainCommunityAdviser: false, formErrors: {name:'', email: '', description: ''}, nameValid: false,emailValid: false, descriptionValid: false, formValid: false });
     alert('your form has been submitted, we will get back to you soon');
+    }
+    else {
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const description = document.getElementById('description');
+      this.validateField('name',name.value);
+      this.validateField('email',email.value);
+      this.validateField('description',description.value);
+    }
   }
 
   render() {
     return (
-    <div className='wrapper'>
-    <h1>Contact Us</h1>
-    <main>
+    <main className='wrapper'>
+    <h1>Start a Social Action</h1>
     <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
       <form onSubmit={this.handleSubmit}>
         
         <div className='form'>
-          <label className='form-label' htmlFor="name">Name  <span className='red-asterisk'>*</span></label>
-          <input className='form-box' type="text" id="name" name="name" value={this.state.name} onChange={this.handleChange} />
-          <label className='form-label' htmlFor="email">Email  <span className='red-asterisk'>*</span></label>
-          <input className='form-box' type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
+          <label className='form-label' 
+                 htmlFor="name">Name  <span className='red-asterisk'>*</span>
+          </label>
+          <input className='form-box' 
+                 type="text" 
+                 id="name" 
+                 name="name" 
+                 value={this.state.name} 
+                 onChange={this.handleChange} />
+          <img id="name-icon" className="invisible" alt="validation"></img>
+          <label className='form-label' 
+                 htmlFor="email">Email  <span className='red-asterisk'>*</span>
+          </label>
+          <input className='form-box' 
+                 type="email" 
+                 id="email" 
+                 name="email" 
+                 value={this.state.email} 
+                 onChange={this.handleChange} />
+          <img id="email-icon" className="invisible" alt="validation"></img>
           <label className='form-label' htmlFor="phone">Telephone Number</label>
-          <input className='form-box' type="text" id="phone" name="phone" value={this.state.phone} onChange={this.handleChange} />
-          <label className='form-label' htmlFor="description">Description of Social Action  <span className='red-asterisk'>*</span></label>
-          <textarea name="description" id="description" cols="40" rows="10" value={this.state.description} onChange={this.handleChange}></textarea>
+          <input className='form-box' 
+                 type="text" 
+                 id="phone" 
+                 name="phone" 
+                 value={this.state.phone} 
+                 onChange={this.handleChange} />
+          <label className='form-label' 
+                 htmlFor="description">Description of Social Action  <span className='red-asterisk'>*</span></label>
+          <textarea name="description" 
+                    id="description" 
+                    cols="40" 
+                    rows="10" 
+                    value={this.state.description} 
+                    onChange={this.handleChange}></textarea>
+          <img id="des-icon" className="invisible" alt="validation"></img>
           
           <p className='choices-p'>Please click on the options that apply</p>
           <span className="choices-text">I want to connect with a local Community Organiser
@@ -136,15 +208,14 @@ console.log('BEFORE SWITCH', this.state.nameValid);
           </label>
           </span>
         
-          <button id="form-button" className="button-large" disabled= { !this.state.formValid} type="submit">Submit</button>
+          <button id="form-button" className="button-large" type="submit">Submit</button>
         </div>
       </form>
-    </main>
     <div>
       <FormErrors formErrors={this.state.formErrors} />
     </div>
 
-    </div>
+    </main>
     );
   }
 }

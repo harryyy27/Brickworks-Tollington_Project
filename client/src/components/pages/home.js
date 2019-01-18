@@ -22,10 +22,11 @@ class Home extends React.Component {
           
             <figure id='logo'>
               <img id='logo-img' src={logoImg} alt='Brickworks logo'/>
+              <figcaption className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
+            </figcaption>
             </figure> 
                 
-            <p className='hub-description-four'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society.
-            </p>
+            
            
             <button className='button-large' onClick={this.addEvent}>Get Involved</button>
           </main>
