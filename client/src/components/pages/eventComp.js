@@ -70,7 +70,6 @@ else {
       <span className="single-event">Name: {fullname_event_organiser}</span>
       <span className="single-event">E-mail: {email_event_organiser}</span>
       <span className="single-event">Telephone: {telephone_event_organiser}</span>
-    
   </div>
 
   )

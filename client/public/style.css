@@ -258,6 +258,14 @@
     padding: 3rem 0rem;
   }
 
+  h3 {
+    padding-bottom: 1rem;
+  }
+
+  h4 {
+    padding-bottom: 0.5rem;
+  }
+
  /*HOME PAGE */
 
   #logo {
@@ -283,8 +291,6 @@
 
   .intro {
     font-size: 1.7rem;
-    text-align: left;
-    font-style: italic;
   }
   
   #logo-wrapper {
@@ -422,18 +428,15 @@ a {
 }
 
 .a-links {
-  border: 1px solid black;
   display: flex;
   width: fit-content;
   padding: 0.3rem 1rem;
-  border-radius: 7px;
-  background: #474747;
-  color: white;
-  /* box-shadow: 3px 4px 10px #888888; */
+  background: #E0E4E7;
 }
 
 .a-links:hover {
   background: #6c6c6c;
+  color: white;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
@@ -444,14 +447,6 @@ a {
 
 .a-links-three {
   display: flex;
-}
-
-/* #container {
-  height: 100vh;
-} */
-
-#root {
-   /* height: 100vh; */
 }
 
 .wrapper {
@@ -522,10 +517,10 @@ a {
   position: absolute;
   width: 120px;
   height: 120px;
-  border: 7px solid slategrey;
+  border: 7px solid #6c6c6c;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: slategrey transparent transparent transparent;
+  border-color: #6c6c6c transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {
@@ -563,7 +558,7 @@ time {
 /* FAQ Page */
 
 .question {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #353535;
 }
@@ -571,10 +566,6 @@ time {
 .question-two {
   padding: 1rem 0rem;
   color: #353535;
-}
-
-.answer {
-  font-style: italic;
 }
 
 .faq-anchor {
@@ -590,7 +581,7 @@ time {
 }
 
 .top-ten-links {
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
 }
 
 /* Single Event Page */
