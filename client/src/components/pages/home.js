@@ -3,6 +3,10 @@ import logoImg from '../../../public/images/brickworks-logo.svg';
 
 class Home extends React.Component {
   
+componentDidMount = () => {
+  window.scrollTo(0,0);
+}
+
   constructor(props){
   super(props)
   this.state= {

@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+class TopTen extends React.Component {
 
-const TopTen= () => (
+componentDidMount = () => {
+    window.scrollTo(0,0);
+}
+
+render() {
+    return (
     <main data-testid="topten-page" className='wrapper'>
         <h1>Top Ten Tips</h1>
             <p className='question'>Engaging in social action takes time, energy and passion, here are our top 10 tips to get you started:</p>
@@ -31,6 +37,7 @@ const TopTen= () => (
             </label>
             </div>
     </main>
-)
-
+    )
+}
+}
 export {TopTen};

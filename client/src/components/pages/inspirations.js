@@ -1,6 +1,11 @@
 import React from 'react';
 
 class Inspiration extends React.Component {
+
+componentDidMount = () => {
+    window.scrollTo(0,0);
+}
+
     render(){
         return(
     <main data-testid="inspirations-page" className='wrapper'>

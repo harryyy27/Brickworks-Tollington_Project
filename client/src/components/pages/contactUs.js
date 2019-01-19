@@ -208,7 +208,7 @@ console.log('BEFORE SWITCH', this.state.nameValid);
           </label>
           </span>
         
-          <button id="form-button" className="button-large" type="submit">Submit</button>
+          <button id="form-button" className="button-large button-large-two" type="submit">Submit</button>
         </div>
       </form>
     <div>

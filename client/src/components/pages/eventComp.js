@@ -16,9 +16,6 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
           </time>
           <h4>Location: {event_location}</h4>
           <p>{event_description}</p>
-        {/* <li>{fullname_event_organiser}</li>
-        <li>{email_event_organiser}</li>
-        <li>{telephone_event_organiser}</li> */}
         <Link className="a-links" key={event_id} to={'/event-detailed/' + event_name} >
         Find out more
         </Link >
@@ -63,7 +60,8 @@ const SingleEvent = ({ event_id, event_name, event_description, event_date_time,
 else {
   return(
     <div key={event_id} >
-    <time>
+      <h3>Event Information</h3>
+      <time>
         Time: &nbsp; <span> {event_date_time}</span>
       </time>
       <span className="single-event">Location: &nbsp; {event_location}</span>
