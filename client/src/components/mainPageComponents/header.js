@@ -16,10 +16,10 @@ componentDidDisappear = (menu,header) => {
 }
 componentDidMount = () => {
   const pathname = this.props.location.pathname;
+  const menu = document.getElementById('menu');
   console.log(pathname);
   if(pathname==='/'){
     if(window.innerWidth<=1080){
-    const menu = document.getElementById('menu');
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
     }
   }
@@ -38,14 +38,11 @@ componentDidMount = () => {
   else {
 
     const menumarker = document.getElementById(`${pathname.split('/')[1]}`);
-    console.log(menumarker);
     menumarker.className = 'nav-link current-page';
   }
   window.addEventListener('resize', ()=>{
     if(window.innerWidth<748){
-      const menuLinks = document.querySelectorAll('.nav-link')
-      
-      const menu = document.getElementById('menu');
+      const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
       icon.focus();
       menuLinks.forEach(el => {
@@ -68,6 +65,24 @@ componentDidMount = () => {
     else {
       const home = document.getElementById('home-label');
       home.className = "";
+    }
+  })
+  document.addEventListener("click", (event)=>{
+    console.log(event.target);
+    
+    if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerwidth<=1080){
+      const icon = document.getElementById("icon");
+      const menuLinks = document.querySelectorAll('.nav-link');
+      const header = document.querySelector("header");
+      icon.className='image image-closed';
+      menu.className='menu menu-closed';
+      menu.setAttribute("aria-hidden", "true");
+      icon.setAttribute("aria-expanded", "false");
+      menuLinks.forEach(el => {
+        el.setAttribute('tabIndex',"-1");
+      })
+      icon.focus();
+      this.componentDidDisappear(menu,header);
     }
   })
 }
