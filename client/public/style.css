@@ -431,6 +431,7 @@ a {
 
 .a-links {
   display: flex;
+  color: black;
   width: fit-content;
   padding: 0.3rem 1rem;
   background: #E0E4E7;
