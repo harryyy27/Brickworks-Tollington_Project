@@ -220,7 +220,7 @@ console.log('BEFORE SWITCH', this.state.nameValid);
           </label>
           </span>
 
-          <button className="button-large button-large-two" type="submit" onClick={this.handleSubmit} disabled= { !this.state.formValid} >Submit</button>
+          <button className="button-large button-large-two" type="submit" onClick={this.handleSubmit} >Submit</button>
         </form>
       
       <div>
