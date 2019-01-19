@@ -24,16 +24,8 @@ class ContactUs extends React.Component {
     const target = event.target;
     
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    
-    // if(target.type === 'checkbox'){
-    // const value = (target.checked)? 'Yes': 'No';
-    // }
-    // else {
-    //   const value =  target.value;
-    // }
    
     this.setState({ [target.name]: value }, () => {this.validateField(target.name, value)});
- 
   };
 
   validateField = (fieldName, value) => {
@@ -41,7 +33,7 @@ class ContactUs extends React.Component {
     let nameValid = this.state.nameValid;
     let emailValid = this.state.emailValid;
     let descriptionValid = this.state.descriptionValid;
-console.log('BEFORE SWITCH', this.state.nameValid);
+    console.log('BEFORE SWITCH', this.state.nameValid);
     switch(fieldName) {
       case 'name':
       nameValid = (value.length >=2 ) 
@@ -102,7 +94,6 @@ console.log('BEFORE SWITCH', this.state.nameValid);
     this.setState( {formValid: this.state.nameValid && this.state.descriptionValid && this.state.emailValid });
   }
 
-
   handleSubmit = event => {
     event.preventDefault();
     if(this.state.formValid){
@@ -144,7 +135,9 @@ console.log('BEFORE SWITCH', this.state.nameValid);
     <h1>Start a Social Action</h1>
     <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
       <form onSubmit={this.handleSubmit}>
-        
+      <div>
+      <FormErrors formErrors={this.state.formErrors} />
+      </div>
         <div className='form'>
           <label className='form-label' 
                  htmlFor="name">Name  <span className='red-asterisk'>*</span>
@@ -211,9 +204,7 @@ console.log('BEFORE SWITCH', this.state.nameValid);
           <button id="form-button" className="button-large button-large-two" type="submit">Submit</button>
         </div>
       </form>
-    <div>
-      <FormErrors formErrors={this.state.formErrors} />
-    </div>
+
 
     </main>
     );

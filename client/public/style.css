@@ -609,7 +609,7 @@ time {
 .validate {
   display: inline-block;
   width: 1rem;
-  margin: 0rem 0.2rem;
+  margin: 0.2rem 0.2rem;
 }
 
 .form-box {
@@ -624,7 +624,7 @@ time {
 
 .form-label {
   display: flex;
-  margin: 2rem 0rem 0.5rem 0rem;
+  margin: 1rem 0rem 0.5rem 0rem;
 }
 
 .choices-p {
@@ -648,6 +648,15 @@ textarea {
 }
 
 .red-asterisk {
+  color: red;
+}
+
+.form-errors {
+  margin-top: 1rem;
+}
+
+.error-message {
+  padding-bottom: 0.5rem;
   color: red;
 }
 
