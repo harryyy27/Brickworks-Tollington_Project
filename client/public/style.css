@@ -185,6 +185,10 @@
   html {
     font-size: 18px;
   }
+  #menu {
+    width: 60vw;
+    right:0;
+  }
 
   h1 {
     padding: 2rem 0rem;
@@ -202,11 +206,11 @@
   }
  
   .menu-closed > label {
-    transform: translate3d(110vw, 0, 0);
+    transform: translate3d(70vw, 0, 0);
   }
 
   .menu-open > label {
-    transform: translate3d(40vw, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -220,9 +224,6 @@
    font-size: 20px;
   }
 
-  header {
-    z-index: 1;
-  }
    
   nav {
      width: 100vw;
@@ -342,6 +343,7 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 footer {
@@ -441,10 +443,6 @@ a {
 }
 
 /* NAV-BAR */
-
-.front {
-  z-index: 1;
-}
 
 #logo {
   text-align: center;
