@@ -7,10 +7,10 @@ class Nav extends React.Component {
 
 //   state = {
 //     screensize: 'small'
-componentDidDisappear = (menu,header) => {
+componentDidDisappear = (menu) => {
   setTimeout(()=>{
     menu.className='menu menu-closed invisible';
-    header.classList.remove("front");
+   
   },700)
   
 }
@@ -101,10 +101,7 @@ toggleMenu = (e) => {
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');
-    const header = document.querySelector("header");
     if (menu.className === 'menu menu-closed invisible') {
-      
-      header.classList.add("front");
       icon.className='image image-open';
       menu.className='menu menu-closed';
       setTimeout(()=>{
@@ -127,7 +124,7 @@ toggleMenu = (e) => {
         el.setAttribute('tabIndex',"-1");
       })
       icon.focus();
-      this.componentDidDisappear(menu,header);
+      this.componentDidDisappear(menu);
     }
   
 }
