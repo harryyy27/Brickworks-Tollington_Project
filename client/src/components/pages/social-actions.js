@@ -36,6 +36,18 @@ componentDidMount() {
 })
 
 .catch(err => console.log(err));
+setTimeout(()=>{
+  const miniwraps = document.querySelectorAll('mini-wrapper');
+const miniarray = Array.from(miniwraps);
+console.log(miniwraps);
+console.log(miniarray);
+},1000);
+// miniwraps.forEach(el=> {
+//   el.addEventListener('click',()=>{
+//     console.log('dga');
+//     el.className="invisible";
+//   })
+// })
 }
 
 addEvent = () => {
@@ -45,14 +57,14 @@ addEvent = () => {
 render() {
   if (this.state.allEvntLoading || this.state.pastEvntLoading) {
     return (
-      <div className='wrapper'>
-      <h1 data-testid="social-actions-page">Social Actions</h1>
-      <main>
-      <div className='loading-div'>
-        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
+      <main className='wrapper'>
+        <h1 data-testid="social-actions-page">Social Actions</h1>
+      
+        <div className='loading-div'>
+          <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
       </main>
-      </div>
+      
     ) 
   } 
   

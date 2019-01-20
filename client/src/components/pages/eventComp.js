@@ -1,29 +1,96 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// [event_id, event_name, event_description, event_date_time, event_location, fullname_event_organiser, 
+//   email_event_organiser, telephone_event_organiser, recurring_event_description]
+class EventComp extends React.Component{  
+  constructor(props) {
+    super(props);
+    this.handleMouseOver=this.handleMouseOver.bind(this);
+    this.handleMouseOff=this.handleMouseOff.bind(this);
+  }
+   
+  handleMouseOver = (event) => {
+    if(event.target.querySelector('.a-links')){
+    if(event.target===document.getElementsByClassName("mini-wrapper")){
+    let link = event.target.querySelector('.a-links');
+    link.className = "a-links"
+    }
+  }
+    else {
+      if(event.target.parentElement.querySelector('.a-links')){
+      let link = event.target.parentElement.querySelector('.a-links');
+      link.className="a-links"
+      }
+    }
+    // event.target.lastElementChild.classList.remove('invisible');
+    
+  }
+  handleMouseOff = (event) => {
+    
+    if(event.target===document.getElementsByClassName("mini-wrapper")){
+      if(event.target.querySelector('.a-links')){
+      let link = event.target.querySelector('.a-links');
+      link.className = "a-links invisible"
+      }
+    }
+      else {
+        if(event.target.parentElement.querySelector('.a-links')){
+        let link = event.target.parentElement.querySelector('.a-links');
+        link.className="a-links invisible"
+        }
+      }
+    }
+    toggleButton = (event) => {
+      console.log(event.target);
+      if(event.target===document.getElementsByClassName("mini-wrapper")){
+        if(event.target.querySelector('.a-links')){
+          let link = event.target.querySelector('.a-links');
+          link.className = "a-links invisible"
+        }
+        else{
+          let link = event.target.querySelector('.a-links invisible');
+          link.className = "a-links"
+        }
+      }
+      else {
+        if(event.target.parentElement.querySelector('.a-links')){
+          let link = event.target.parentElement.querySelector('.a-links');
+          link.className="a-links invisible"
+        }
+        else {
+          let link = event.target.parentElement.querySelector('.a-links invisible');
+          link.className="a-links"
+        }
+      }
+    }
 
-const EventComp = ({ event_id, event_name, event_description, event_date_time, event_location, fullname_event_organiser, 
-  email_event_organiser, telephone_event_organiser, recurring_event_description}) => {
+    
   
-
+  render() {
+ 
   return (
 
-    <div className="mini-wrapper">
+    <div onMouseOver={this.handleMouseOver} onClick={this.toggleButton} onMouseOut={this.handleMouseOff} className="mini-wrapper">
         
-          <h3>{event_name.split('rec')[0]}</h3>
+          <h3 onMouseOver={this.handleMouseOver} onClick={this.toggleButton} onMouseOut={this.handleMouseOff} className="event-title">{this.props.event.event_name.split('rec')[0]}</h3>
           
-          <time>
-            Time: &nbsp;<span>{event_date_time}</span> &nbsp;<span>{recurring_event_description}</span>
+          <time onMouseOver={this.handleMouseOver} onClick={this.toggleButton} onMouseOut={this.handleMouseOff} className="time">
+            Time: &nbsp;<span>{this.props.event.event_date_time.split(' ')[1]}</span>&nbsp;
+            <span>{this.props.event.event_date_time.split(' ')[0].split('-')[2]}</span>/
+            <span>{this.props.event.event_date_time.split(' ')[0].split('-')[1]}</span>/
+            <span>{this.props.event.event_date_time.split(' ')[0].split('-')[0]}</span>
+            
           </time>
-          <h4>Location: {event_location}</h4>
-          <p>{event_description}</p>
-        <Link className="a-links" key={event_id} to={'/event-detailed/' + event_name} >
+          <h4 onMouseOver={this.handleMouseOver} onClick={this.toggleButton} onMouseOut={this.handleMouseOff}>Location: {this.props.event.event_location}</h4>
+          <p onMouseOver={this.handleMouseOver} onClick={this.toggleButton} onMouseOut={this.handleMouseOff}>{this.props.event.event_description}</p>
+        <Link className="a-links invisible" key={this.props.event.event_id} to={'/event-detailed/' + this.props.event.event_name} >
         Find out more
         </Link >
       </div>
   
   )
 }
-
+}
 const EventByThemeComp = ({ event_id, event_name, event_description, date_time, event_location, theme }) => {
   return (
     <ul>
@@ -104,13 +171,15 @@ const UpcomingEvents = ({ allEvents}) => {
   }
 }
 
-const PastEvents = ({ pastEvents}) => {
-  if(pastEvents.length !== 0){
+class PastEvents extends React.Component {
+  
+ render() {
+  if(this.props.pastEvents.length !== 0){
     return (
       <React.Fragment>
         <h2>Past Events</h2>
-        {pastEvents.map( event => (
-              <EventComp key={event.fields.event_id} {...event.fields} /> 
+        {this.props.pastEvents.map( event => (
+              <EventComp key={event.fields.event_id} event={event.fields} /> 
             ))} 
 
       </React.Fragment>
@@ -119,5 +188,6 @@ const PastEvents = ({ pastEvents}) => {
       return '';
     }
   }
+}
 
 export { SingleEvent, FormErrors, EventComp, EventByThemeComp, UpcomingEvents, PastEvents };

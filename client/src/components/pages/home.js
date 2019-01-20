@@ -20,8 +20,9 @@ componentDidMount = () => {
 
   render() {
     return( 
-        <div className='wrapper'>
-          <main data-testid="home-page">
+        
+          <main className='wrapper' 
+                data-testid="home-page">
           
           
             <figure id='logo'>
@@ -34,7 +35,7 @@ componentDidMount = () => {
            
             <button className='button-large' onClick={this.addEvent}>Get Involved</button>
           </main>
-        </div>
+        
     )}
 }
 

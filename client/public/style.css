@@ -408,6 +408,7 @@ a {
   border-radius: 7px;
   background: #474747;
   color: white;
+  text-align: center;
   /* box-shadow: 3px 4px 10px #888888; */
 }
 
@@ -527,15 +528,27 @@ a {
 }
 
 .mini-wrapper {
-  padding-bottom: 2rem;
+  padding: 1rem 0rem;
+  background:lightgrey;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
 }
+
+.mini-wrapper:hover {
+  border: 2px solid grey;
+}
+
 
 time {
   padding-bottom: 0.5rem;
   display:block;
   font-size: 1rem;
+  
 }
-
+.event-title {
+  text-align: center;
+  
+}
 /* FAQ Page */
 
 .question {
