@@ -141,6 +141,9 @@ console.log('BEFORE SWITCH', this.state.nameValid);
         <h1>Promote a Social Action</h1>
         <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
         <form>
+        <div>
+          <FormErrors formErrors={this.state.formErrors} />
+        </div>
           <label className='form-label'
                  htmlFor="name">Name  <span className='red-asterisk'>*</span>
           </label>
@@ -219,13 +222,8 @@ console.log('BEFORE SWITCH', this.state.nameValid);
             />
           </label>
           </span>
-
           <button className="button-large button-large-two" type="submit" onClick={this.handleSubmit} >Submit</button>
         </form>
-      
-      <div>
-      <FormErrors formErrors={this.state.formErrors} />
-    </div>
     </main>
     )
   }

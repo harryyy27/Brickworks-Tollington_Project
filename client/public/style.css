@@ -4,9 +4,25 @@
 
 @media only screen and (max-width: 1080px) {
   /*NAVBAR */  
- 
+
+  html {
+    font-size: 16px;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
   h1 {
-    padding: 2rem 0rem;
+    padding: 1rem 0rem 2rem;
+  }
+
+  h3 {
+    padding-bottom: 0.5rem;
+  }
+
+  h4 {
+    padding-bottom: 0.5rem;
   }
 
   .menu {
@@ -23,6 +39,10 @@
   
   #name-nav {
     display: none;
+  }
+
+  #bike-img {
+    width: 80vw;
   }
 
   /* Menu animation, sliding drawers effect(coined?) */
@@ -160,12 +180,8 @@
   /* Form */
 
   .form-box {
-    max-width: 80vw;
+    max-width: 90vw;
     height: 2rem;
-  }
-
-  textarea {
-    max-width: 80vw;
   }
 
   /* Single Event */
@@ -194,11 +210,19 @@
     padding: 2rem 0rem;
   }
 
+  .wrapper {
+    width: 80%;
+  }
+
   #logo-nav {
     margin: 0.5rem;
     height: 3rem;
     padding-left: 1.5rem;
     cursor: pointer;
+  }
+
+  #bike-img {
+    width: 80vw;
   }
 
   .nav-link {
@@ -235,6 +259,14 @@
     padding: 3rem 0rem;
   }
 
+  h3 {
+    padding-bottom: 1rem;
+  }
+
+  h4 {
+    padding-bottom: 0.5rem;
+  }
+
  /*HOME PAGE */
 
   #logo {
@@ -245,7 +277,6 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: flex-start;
-    
   }
    
   #logo-img {
@@ -254,10 +285,13 @@
      margin: auto; 
      float: left; 
   }
+
+  #bike-img {
+    width: 50vw;
+  }
+
   .intro {
     font-size: 1.7rem;
-    text-align: left;
-    font-style: italic;
   }
   
   #logo-wrapper {
@@ -358,7 +392,7 @@ footer {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #353535;
   text-align: center;
   font-weight: bold;
@@ -366,9 +400,9 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #353535;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .h2-two {
@@ -376,13 +410,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #353535;
-  padding-bottom: 1rem;
-}
-
-h4 {
-  padding-bottom: 1rem;
 }
 
 p {
@@ -401,18 +430,16 @@ a {
 }
 
 .a-links {
-  border: 1px solid black;
   display: flex;
+  color: black;
   width: fit-content;
   padding: 0.3rem 1rem;
-  border-radius: 7px;
-  background: #474747;
-  color: white;
-  /* box-shadow: 3px 4px 10px #888888; */
+  background: #E0E4E7;
 }
 
 .a-links:hover {
   background: #6c6c6c;
+  color: white;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
@@ -425,19 +452,10 @@ a {
   display: flex;
 }
 
-/* #container {
-  height: 100vh;
-} */
-
-#root {
-   /* height: 100vh; */
-}
-
 .wrapper {
   position: relative;
   top: 4rem;
   min-height: calc(100vh - 9rem);
-  width: 80%;
   margin: auto;
   padding-bottom: 1rem;
 }
@@ -457,7 +475,7 @@ a {
   border-radius: 7px;
   background: #474747;
   color: white;
-  font-size: 20px;
+  font-size: 1rem;
   margin: auto;
   display: block;
   /* box-shadow: 3px 4px 10px #888888;  */
@@ -498,10 +516,10 @@ a {
   position: absolute;
   width: 120px;
   height: 120px;
-  border: 7px solid slategrey;
+  border: 7px solid #6c6c6c;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: slategrey transparent transparent transparent;
+  border-color: #6c6c6c transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {
@@ -539,7 +557,7 @@ time {
 /* FAQ Page */
 
 .question {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #353535;
 }
@@ -547,10 +565,6 @@ time {
 .question-two {
   padding: 1rem 0rem;
   color: #353535;
-}
-
-.answer {
-  font-style: italic;
 }
 
 .faq-anchor {
@@ -566,7 +580,7 @@ time {
 }
 
 .top-ten-links {
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
 }
 
 /* Single Event Page */
@@ -587,7 +601,6 @@ time {
 #bike-img {
   display: block;
   margin: 0 auto;
-  width: 50vw;
   padding-bottom: 2rem;
 }
 
@@ -595,7 +608,7 @@ time {
 .validate {
   display: inline-block;
   width: 1rem;
-  margin: 0rem 0.2rem;
+  margin: 0.2rem 0.2rem;
 }
 
 .form-box {
@@ -605,11 +618,12 @@ time {
 
 .mobile-p {
   padding-bottom: 0;
+  font-weight: bold;
 }
 
 .form-label {
   display: flex;
-  margin: 2rem 0rem 0.5rem 0rem;
+  margin: 1rem 0rem 0.5rem 0rem;
 }
 
 .choices-p {
@@ -626,9 +640,25 @@ time {
 .checkbox {
   margin: 0rem 0rem 0rem 1rem;
 }
+
+textarea {
+  width: 21rem;
+  max-width: 90vw;
+}
+
 .red-asterisk {
   color: red;
 }
+
+.form-errors {
+  margin-top: 1rem;
+}
+
+.error-message {
+  padding-bottom: 0.5rem;
+  color: red;
+}
+
 /* Resouces */
 
 .resource-links {

@@ -70,18 +70,17 @@ else {
       <span className="single-event">Name: {fullname_event_organiser}</span>
       <span className="single-event">E-mail: {email_event_organiser}</span>
       <span className="single-event">Telephone: {telephone_event_organiser}</span>
-    
   </div>
 
   )
 }
   }
 const FormErrors = ({formErrors}) =>
-<div className='formErrors'>
+<div className='form-errors'>
 {Object.keys(formErrors).map((fieldName, i) => {
   if(formErrors[fieldName].length > 0){
     return (
-      <p id='error-container' key={i}>{fieldName} {formErrors[fieldName]}</p>
+      <p className='error-message' key={i}>{fieldName} {formErrors[fieldName]}</p>
     )
     } else {
     return '';
@@ -108,7 +107,6 @@ const PastEvents = ({ pastEvents}) => {
   if(pastEvents.length !== 0){
     return (
       <React.Fragment>
-        <h2>Past Events</h2>
         {pastEvents.map( event => (
               <EventComp key={event.fields.event_id} {...event.fields} /> 
             ))} 
