@@ -19,7 +19,7 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
             
           </time>
           <h4>Location: {event_location}</h4>
-          <p>{event_description}</p>
+          <p>{event_description.slice(0,200)+'...'}</p>
         <Link className="a-links-four" key={event_id} to={'/event-detailed/' + event_name} >
         Find out more
         </Link >
