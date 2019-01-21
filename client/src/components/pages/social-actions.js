@@ -4,15 +4,18 @@ import getAllEvents from '../utils/utilsgetAllEvent';
 import getPastEvents from '../utils/utilsgetPastEvent';
 import {EventComp, UpcomingEvents, PastEvents} from './eventComp';
 
-class SocialActions extends React.Component {
-  
-state = {
-  allEvents : [],
-  pastEvents : [],
-  allEvntLoading : true,
-  pastEvntLoading: true,
-}
 
+class SocialActions extends React.Component {
+
+constructor(props){
+  super(props)
+  this.state = {
+    allEvents : [],
+    pastEvents : [],
+    allEvntLoading : true,
+    pastEvntLoading: true,
+  }
+}
 componentDidMount() {
   
   window.scrollTo(0,0);
@@ -22,7 +25,7 @@ componentDidMount() {
     //set allEvents state
     this.setState( { allEvents: response, allEvntLoading: false});
     //pass data to parent
-    this.props.extractData(this.state.allEvents);
+    
   })
   
   .catch(err => console.log(err));
@@ -31,7 +34,7 @@ componentDidMount() {
   .then(response => {
   
   this.setState( { pastEvents : response, pastEvntLoading:false});
-  this.props.extractData(this.state.pastEvents);
+ 
   
 })
 
@@ -40,6 +43,7 @@ componentDidMount() {
 
 addEvent = () => {
   this.props.history.push('/topten');
+  this.props.updateNav();
 }
 
 render() {

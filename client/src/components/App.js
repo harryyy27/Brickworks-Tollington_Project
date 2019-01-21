@@ -19,19 +19,26 @@ import {Footer} from './mainPageComponents/footer';
 
 const Navbar = withRouter(props => <Nav {...props }/>);
 class App extends React.Component {
-  state = {
-    background: 'background-img',
-    data: {},
-  }
- extractData = (data) => {
-    this.setState({data: data})
-    console.log(data);
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      background: 'background-img',
+    }
   }
   setBackground = () => {
     if(process.env.NODE_ENV === 'test') {
       const background = document.getElementById('background');
       background.classList.remove('background-img');
     }
+  }
+  updateNav = () => {
+    console.log('this worked');
+    const oldlink = document.querySelector('.current-page');
+    oldlink.classList.remove('current-page');
+    const topten = document.getElementById('topten');
+    topten.className="nav-link current-page";
+
   }
   componentDidMount = () => {
     
@@ -123,7 +130,7 @@ class App extends React.Component {
       <Navbar />
       <Switch>
         <Route exact path='/' component= { Home } />
-        <Route path='/social-actions' render={(props) => <SocialActions {...props} extractData={this.extractData} />}/>
+        <Route path='/social-actions' render={(props) => <SocialActions {...props} updateNav={this.updateNav} />}/>
         <Route path='/promote-social-action' component= { ListEvent } />
        
         <Route path='/event-detailed' render={(props) => <EventDetailed {...props} data={this.state.data} />}/>

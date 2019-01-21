@@ -4,9 +4,12 @@ import logoImg from '../../../public/images/brickworks-logo-2.svg';
 
 
 class Nav extends React.Component {
-
-//   state = {
-//     screensize: 'small'
+constructor(props){
+super(props)
+  this.state = {
+    screensize: 'small'
+}
+}
 componentDidDisappear = (menu) => {
   setTimeout(()=>{
     menu.className='menu menu-closed invisible';
@@ -68,7 +71,7 @@ componentDidMount = () => {
     }
   })
   document.addEventListener("click", (event)=>{
-    console.log(event.target);
+    
     
     if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerwidth<=1080){
       const icon = document.getElementById("icon");
@@ -89,13 +92,16 @@ componentDidMount = () => {
 
 toggleMenu = (e) => {
   
-  
+  console.log(e.target.textContent);
   
   if(e.target.className==='nav-link'){
   let oldpage = document.querySelector('.current-page');
   oldpage.classList.remove('current-page');
-  console.log(e.target);
+  
   e.target.className = "nav-link current-page";
+  }
+  else if(e.target.textContent==="Express"){
+
   }
  
     const icon= document.getElementById('icon');
@@ -138,6 +144,8 @@ toggleOpacity = () => {
 
 takeMeHome = () => {
   this.props.history.push('/');
+  let oldpage = document.querySelector('.current-page');
+  oldpage.classList.remove('current-page');
 }
   
   render() {
