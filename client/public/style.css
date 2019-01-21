@@ -437,10 +437,9 @@ header {
 }
 
 footer {
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
   height: 1rem;
   position: relative;
-  top: 0.5rem;
   display: block;
   width: 100%;
   background-color: black;
@@ -525,6 +524,7 @@ a {
   top: 3rem;
   min-height: calc(100vh - 7rem);
   margin: auto;
+  padding-bottom: 4rem;
 }
 
 .wrapper-two {
@@ -548,6 +548,7 @@ a {
   font-size: 1rem;
   margin: auto;
   display: block;
+  margin-top: 2rem;
   /* box-shadow: 3px 4px 10px #888888;  */
 }
 
