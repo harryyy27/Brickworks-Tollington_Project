@@ -138,6 +138,8 @@ toggleOpacity = () => {
 
 takeMeHome = () => {
   this.props.history.push('/');
+  let oldpage = document.querySelector('.current-page');
+  oldpage.classList.remove('current-page');
 }
   
   render() {
