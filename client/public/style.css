@@ -193,6 +193,7 @@
 
   .single-event-img {
     width: 65vw;
+    padding-bottom: 2rem;
   }
 
 }
@@ -238,6 +239,11 @@
   .menu-open > label {
     transform: translate3d(0, 0, 0);
   }
+
+  .single-event-img {
+    padding-bottom: 3rem;
+  }
+
 }
 
 @media only screen and (min-width: 1081px) {
@@ -356,6 +362,7 @@
 
   .single-event-img {
     width: 45vw;
+    padding-bottom: 3rem;
   }
 
   /* Form */
@@ -627,6 +634,7 @@ time {
   padding-bottom: 0.5rem;
   display:block;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 /* FAQ Page */
@@ -663,12 +671,20 @@ time {
 .single-event-img {
   display: block;
   margin: 0 auto;
-  padding-bottom: 3rem;
 }
 
 .single-event {
   display: block;
   padding: 0.4rem 0rem 0.8rem 0rem;
+  font-weight: bold;
+}
+
+.individual-event-div {
+  padding: 0.5rem;
+  border: 1px solid darkgray;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #E0E4E7;
 }
 
 /*Projects*/
@@ -732,6 +748,12 @@ textarea {
 .error-message {
   padding-bottom: 0.5rem;
   color: red;
+}
+
+/* Inspirations */
+
+hr.style2 {
+	border-top: 4px double #8c8b8b;
 }
 
 /* Resouces */
