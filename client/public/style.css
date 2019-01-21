@@ -478,9 +478,10 @@ a {
   width: fit-content;
   padding: 0.3rem 1rem;
   background: #E0E4E7;
+  border: 1px solid darkgray;
 }
 
-.a-links:hover {
+.a-links:hover, .a-links-four:hover {
   background: #6c6c6c;
   color: white;
   -webkit-transition-duration: 0.4s;
@@ -493,6 +494,14 @@ a {
 
 .a-links-three {
   display: flex;
+}
+
+.a-links-four {
+  background: white;
+  color: black;
+  width: fit-content;
+  padding: 0.3rem 1rem;
+  border: 1px solid darkgray;
 }
 
 .wrapper {
@@ -515,7 +524,7 @@ a {
 .button-large {
   border: 1px solid black;
   padding: 0.5rem 2rem;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #474747;
   color: white;
   font-size: 1rem;
@@ -525,6 +534,7 @@ a {
 }
 
 .button-large:hover {
+  cursor: pointer;
   background: #6c6c6c;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
@@ -587,7 +597,11 @@ a {
 }
 
 .mini-wrapper {
-  padding-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid darkgray;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #E0E4E7;
 }
 
 time {
