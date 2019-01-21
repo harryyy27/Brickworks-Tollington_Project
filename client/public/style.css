@@ -114,8 +114,7 @@
   }
 
   .current-page {
-    color: white;
-    background: linear-gradient(black, #2e2e2e)
+    color: orange;
   }
   
   /* navbar icon animation */
@@ -265,7 +264,7 @@
   }
 
   h1 {
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
   }
 
   h3 {
@@ -340,7 +339,7 @@
   }
 
   .current-page {
-    color: cornflowerblue;
+    border-bottom: 1px solid orange;
   }
 
   #menu {
@@ -463,6 +462,15 @@ h1 {
   vertical-align: middle;
 }
 
+.brickworks {
+  display: inline-block;
+  margin-top: 5rem;
+  font-size: 4rem;
+  padding: 1rem 2rem;
+  color: white;
+  border: 9px solid white;
+}
+
 h2 {
   font-size: 1.5rem;
   color: #353535;
@@ -481,7 +489,7 @@ h3 {
 p {
   font-size: 1rem;
   color: #474747;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1rem;
   line-height: 1.2em;
 }
 
@@ -503,14 +511,13 @@ a {
 }
 
 .a-links:hover, .a-links-four:hover {
-  background: #6c6c6c;
-  color: white;
+  background: orange;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .a-links-two {
-  margin: 0.3rem 0rem;
+  margin: 0.3rem 1rem 0rem 0rem;
 }
 
 .a-links-three {
@@ -561,13 +568,32 @@ a {
 
 .button-large:hover {
   cursor: pointer;
-  background: #6c6c6c;
+  background: orange;
+  color: black;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .button-large-two {
   margin-top: 2rem;
+}
+
+.button-large-home {
+  border: 4px double orange;
+  padding: 0.7rem 3rem;
+  background: #474747;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: auto;
+  display: block;
+}
+
+.button-large-home:hover {
+  cursor: pointer;
+  color: orange;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 /* Events pages */
@@ -753,7 +779,7 @@ textarea {
 /* Inspirations */
 
 hr.style2 {
-	border-top: 4px double #8c8b8b;
+	border-top: 4px double orange;
 }
 
 /* Resouces */
@@ -764,7 +790,7 @@ hr.style2 {
 
 .resource-link {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* ///// */
