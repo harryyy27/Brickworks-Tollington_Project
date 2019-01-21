@@ -139,8 +139,8 @@ console.log('BEFORE SWITCH', this.state.nameValid);
     return ( 
       <main className='wrapper'>
         <h1>Promote a Social Action</h1>
-        <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
         <form>
+        <p className='mobile-p'>Please note that Name, Email and Description are required fields</p>
         <div>
           <FormErrors formErrors={this.state.formErrors} />
         </div>

@@ -120,12 +120,12 @@ class App extends React.Component {
   return (
     
     <div id="container">
+      <div className='background-img'>
       <Navbar />
       <Switch>
         <Route exact path='/' component= { Home } />
         <Route path='/social-actions' render={(props) => <SocialActions {...props} extractData={this.extractData} />}/>
         <Route path='/promote-social-action' component= { ListEvent } />
-       
         <Route path='/event-detailed' render={(props) => <EventDetailed {...props} data={this.state.data} />}/>
         <Route path='/faq' component = {Faq} />
         <Route path='/resources' component = {Resources} />
@@ -138,6 +138,7 @@ class App extends React.Component {
         <Route component= { Error } />
       </Switch>
       <Footer />
+    </div>
     </div>
     )}
 };
