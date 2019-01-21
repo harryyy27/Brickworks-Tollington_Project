@@ -20,8 +20,8 @@ componentDidMount = () => {
 
   render() {
     return( 
-        <div className='fade-in'>
-        <div className='wrapper'>
+      <div className='fade-in'>
+        <div className='wrapper wrapper-two'>
           <main data-testid="home-page">
             <figure id='logo'>
               <img id='logo-img' src={logoImg} alt='Brickworks logo'/>
@@ -31,7 +31,7 @@ componentDidMount = () => {
             <button className='button-large' onClick={this.addEvent}>Get Involved</button>
           </main>
         </div>
-        </div>
+      </div>
     )}
 }
 

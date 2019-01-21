@@ -11,10 +11,11 @@
 
   .wrapper {
     width: 90%;
+    padding: 0rem 0rem 2.5rem;
   }
 
   h1 {
-    padding: 1rem 0rem 2rem;
+    padding: 2rem 0rem 2rem;
   }
 
   h3 {
@@ -212,6 +213,7 @@
 
   .wrapper {
     width: 80%;
+    padding: 0rem 2rem 2.5rem;
   }
 
   #logo-nav {
@@ -242,6 +244,7 @@
   
   .wrapper {
     max-width: 65%;
+    padding: 0rem 2rem 2.5rem;
   }
   
   html {
@@ -268,6 +271,10 @@
   }
 
  /*HOME PAGE */
+
+  .background-img {
+    background-image: url('./images/bricks.jpg');
+  }
 
   #logo {
     background: white;
@@ -348,7 +355,13 @@
   /* Single-Events-Page */
 
   .single-event-img {
-    width: 50vw;
+    width: 45vw;
+  }
+
+  /* Form */
+  
+  form {
+    margin-left: 2rem;
   }
 
 }
@@ -424,14 +437,15 @@ header {
 }
 
 footer {
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
   height: 1rem;
   position: relative;
-  top: 4rem;
   display: block;
   width: 100%;
-  /* background-color: black; */
+  background-color: black;
+  color: darkgray;
   text-align: center;
+  margin-top: 1rem;
 }
 
 h1 {
@@ -506,10 +520,15 @@ a {
 
 .wrapper {
   position: relative;
-  top: 4rem;
-  min-height: calc(100vh - 9rem);
+  background-color: white;
+  top: 3rem;
+  min-height: calc(100vh - 7rem);
   margin: auto;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
+}
+
+.wrapper-two {
+  background-color: transparent;
 }
 
 /* NAV-BAR */
@@ -518,7 +537,6 @@ a {
   text-align: center;
   padding: 1rem 0rem;
   margin-bottom: 2rem;
-  margin-top: 1rem;
 }
 
 .button-large {
@@ -530,6 +548,7 @@ a {
   font-size: 1rem;
   margin: auto;
   display: block;
+  margin-top: 2rem;
   /* box-shadow: 3px 4px 10px #888888;  */
 }
 
