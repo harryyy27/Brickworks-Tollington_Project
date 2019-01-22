@@ -23,7 +23,7 @@ componentDidMount = () => {
       // <div className='fade-in'>
         <div className='wrapper wrapper-two'>
           <main data-testid="home-page">
-          <div>
+          <div className='home-div'>
             <h1 className='brickworks'>BRICKWORKS</h1>
           </div>
             {/* <figure id='logo'> */}

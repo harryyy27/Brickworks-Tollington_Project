@@ -171,6 +171,36 @@
     transform: translateX(2px) rotate(45deg);
   }
 
+  .home-div {
+    text-align: center;
+  }
+
+  .brickworks {
+    display: inline-block;
+    margin-top: 5rem;
+    padding: 1rem 1rem;
+    color: black;
+    border: 9px solid black;
+  }
+
+  .button-large-home {
+    border: 4px double orange;
+    padding: 0.7rem 1rem;
+    background: #474747;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 2rem;
+    display: block;
+  }
+
+  .intro {
+    margin-top: 2rem;
+    text-align: center;
+    color: black;
+  }
+
   /* HOME PAGE */
 
   .top-ten-li {
@@ -214,6 +244,18 @@
   .wrapper {
     width: 80%;
     padding: 0rem 2rem 2.5rem;
+  }
+
+  .wrapper-two {
+    background-color: #b4b4b4;
+  }
+
+  .background-img {
+    background-image: url('./images/bricks.jpg');
+  }
+
+  .brickworks {
+    font-size: 3rem;
   }
 
   #logo-nav {
@@ -276,9 +318,38 @@
   }
 
  /*HOME PAGE */
+  
+ .background-img {
+  background-image: url('./images/bricks.jpg');
+  }
 
-  .background-img {
-    background-image: url('./images/bricks.jpg');
+  .wrapper-two {
+    background-color: #b4b4b4;
+  }
+
+  .home-div {
+    text-align: center;
+  }
+
+  .brickworks {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem 1rem;
+    color: black;
+    border: 9px solid black;
+    font-size: 4rem;
+  }
+
+  .button-large-home {
+    border: 4px double orange;
+    padding: 0.7rem 3rem;
+    background: #474747;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: auto;
+    display: block;
+    margin-top: 5rem;
   }
 
   #logo {
@@ -303,7 +374,10 @@
   }
 
   .intro {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin-top: 6rem;
+    color: black;
+    text-align: center;
   }
   
   #logo-wrapper {
@@ -462,15 +536,6 @@ h1 {
   vertical-align: middle;
 }
 
-.brickworks {
-  display: inline-block;
-  margin-top: 5rem;
-  font-size: 4rem;
-  padding: 1rem 2rem;
-  color: white;
-  border: 9px solid white;
-}
-
 h2 {
   font-size: 1.5rem;
   color: #353535;
@@ -541,10 +606,6 @@ a {
   padding-bottom: 4rem;
 }
 
-.wrapper-two {
-  background-color: transparent;
-}
-
 /* NAV-BAR */
 
 #logo {
@@ -576,17 +637,6 @@ a {
 
 .button-large-two {
   margin-top: 2rem;
-}
-
-.button-large-home {
-  border: 4px double orange;
-  padding: 0.7rem 3rem;
-  background: #474747;
-  color: white;
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin: auto;
-  display: block;
 }
 
 .button-large-home:hover {
