@@ -35,12 +35,8 @@ import App from '../App';
     const {getByTestId, getByText} = renderWithRouter(<App />)
     //import necessary commands and components
     const menu = getByTestId('menu')
-    expect(getByTestId('home-page').lastChild.textContent).toBe('Next')
-   //open menu
-    fireEvent.click(menu);
-    //click about link
-    fireEvent.click(getByTestId('about'))
-    expect(getByTestId('about-page').firstChild.textContent).toBe('About')
+    expect(getByTestId('home-page').lastChild.textContent).toBe('Get Involved')
+  
   })
 
   // test('able to reach resources page', () => {
@@ -49,6 +45,7 @@ import App from '../App';
   //   const menu = getByTestId('menu')
   //   //open mennu
   //   fireEvent.click(menu);
+
   //   //click about link
   //   fireEvent.click(getByTestId('resources'))
   //   expect(getByTestId('resources-page').firstChild.textContent).toBe('Resources')

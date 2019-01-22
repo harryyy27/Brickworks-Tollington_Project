@@ -4,7 +4,9 @@ import HomeContent from '../mainPageComponents/img/homeContent';
 class Home extends React.Component {
 
 componentDidMount = () => {
+  if(process.env.NODE_ENV !== "test"){
   window.scrollTo(0,0);
+  }
 }
 
   constructor(props){
