@@ -8,13 +8,19 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
   return (
 
     <div className="mini-wrapper">
-      <h3>{event_name.split('rec')[0]}</h3>
-        <time>
-          Time: &nbsp;<span>{event_date_time}</span> &nbsp;<span>{recurring_event_description}</span>
-        </time>
-      <h4>Location: {event_location}</h4>
-        <p>{event_description}</p>
-      <Link className="a-links-four" key={event_id} to={'/event-detailed/' + event_name} >
+        
+          <h3>{event_name.split('rec')[0]}</h3>
+          
+          <time className="time">
+            Time: &nbsp;<span>{event_date_time.split(' ')[1]}</span>&nbsp;
+            <span>{event_date_time.split(' ')[0].split('-')[2]}</span>/
+            <span>{event_date_time.split(' ')[0].split('-')[1]}</span>/
+            <span>{event_date_time.split(' ')[0].split('-')[0]}</span>
+            
+          </time>
+          <h4>Location: {event_location}</h4>
+          <p>{event_description.slice(0,200)+'...'}</p>
+        <Link className="a-links-four" key={event_id} to={'/event-detailed/' + event_name} >
         Find out more
       </Link >
     </div>
@@ -61,13 +67,15 @@ else {
   return(
     <div key={event_id} >
       <h3>Event Information</h3>
-      <div className='individual-event-div'>
-        <time>
-          Time: &nbsp; <span> {event_date_time}</span>
-        </time>
-        <span className="single-event">Location: &nbsp; {event_location}</span>
-        <p> {event_description}</p>
-      </div>
+      <time className="time">
+            Time: &nbsp;<span>{event_date_time.split(' ')[1]}</span>&nbsp;
+            <span>{event_date_time.split(' ')[0].split('-')[2]}</span>/
+            <span>{event_date_time.split(' ')[0].split('-')[1]}</span>/
+            <span>{event_date_time.split(' ')[0].split('-')[0]}</span>
+            
+          </time>
+      <span className="single-event">Location: &nbsp; {event_location}</span>
+      <p> {event_description}</p>
       <h3>Contact us</h3>
       <div className='individual-event-div'>
         <span className="single-event">Name: {fullname_event_organiser}</span>
