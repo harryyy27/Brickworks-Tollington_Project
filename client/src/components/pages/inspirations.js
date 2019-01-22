@@ -3,7 +3,9 @@ import React from 'react';
 class Inspiration extends React.Component {
 
 componentDidMount = () => {
+    if(process.env.NODE_ENV !== "test"){
     window.scrollTo(0,0);
+    }
 }
 
     render(){

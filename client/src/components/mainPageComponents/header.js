@@ -93,7 +93,7 @@ componentDidMount = () => {
 }
 
 toggleMenu = (e) => {
-  
+  if(process.env.NODE_ENV!=="test"){
   console.log(e.target.textContent);
   
   if(e.target.className==='nav-link'){
@@ -105,7 +105,7 @@ toggleMenu = (e) => {
   else if(e.target.textContent==="Express"){
 
   }
- 
+}
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');

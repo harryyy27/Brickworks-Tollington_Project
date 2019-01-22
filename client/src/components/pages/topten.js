@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 class TopTen extends React.Component {
 
 componentDidMount = () => {
+    if(process.env.NODE_ENV !== "test"){
     window.scrollTo(0,0);
+    }
 }
 
 render() {
