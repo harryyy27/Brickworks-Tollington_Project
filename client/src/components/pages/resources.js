@@ -43,8 +43,11 @@ render() {
             </li>
             <li className='top-ten-li'>Don't give up, have patience and be committed.</li>
         </ol>
-        
         <div className='resource-links'> 
+
+        <hr class="style2"></hr>
+        <br></br>
+
         <p className='question'>Here are some useful links to get you started:</p>
             <div className='resource-link'>
             <a className='a-links a-links-two' href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/591797/A_description_of_social_action.pdf" target="_blank">A description of social action</a>

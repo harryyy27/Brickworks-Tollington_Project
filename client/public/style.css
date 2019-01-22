@@ -114,8 +114,7 @@
   }
 
   .current-page {
-    color: white;
-    background: linear-gradient(black, #2e2e2e)
+    color: orange;
   }
   
   /* navbar icon animation */
@@ -172,6 +171,36 @@
     transform: translateX(2px) rotate(45deg);
   }
 
+  .home-div {
+    text-align: center;
+  }
+
+  .brickworks {
+    display: inline-block;
+    margin-top: 5rem;
+    padding: 1rem 1rem;
+    color: black;
+    border: 9px solid black;
+  }
+
+  .button-large-home {
+    border: 4px double orange;
+    padding: 0.7rem 1rem;
+    background: #474747;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 2rem;
+    display: block;
+  }
+
+  .intro {
+    margin-top: 2rem;
+    text-align: center;
+    color: black;
+  }
+
   /* HOME PAGE */
 
   .top-ten-li {
@@ -193,6 +222,7 @@
 
   .single-event-img {
     width: 65vw;
+    padding-bottom: 2rem;
   }
 
 }
@@ -214,6 +244,18 @@
   .wrapper {
     width: 80%;
     padding: 0rem 2rem 2.5rem;
+  }
+
+  .wrapper-two {
+    background-color: #b4b4b4;
+  }
+
+  .background-img {
+    background-image: url('./images/bricks.jpg');
+  }
+
+  .brickworks {
+    font-size: 3rem;
   }
 
   #logo-nav {
@@ -238,6 +280,11 @@
   .menu-open > label {
     transform: translate3d(0, 0, 0);
   }
+
+  .single-event-img {
+    padding-bottom: 3rem;
+  }
+
 }
 
 @media only screen and (min-width: 1081px) {
@@ -259,7 +306,7 @@
   }
 
   h1 {
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
   }
 
   h3 {
@@ -271,9 +318,38 @@
   }
 
  /*HOME PAGE */
+  
+ .background-img {
+  background-image: url('./images/bricks.jpg');
+  }
 
-  .background-img {
-    background-image: url('./images/bricks.jpg');
+  .wrapper-two {
+    background-color: #b4b4b4;
+  }
+
+  .home-div {
+    text-align: center;
+  }
+
+  .brickworks {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem 1rem;
+    color: black;
+    border: 9px solid black;
+    font-size: 4rem;
+  }
+
+  .button-large-home {
+    border: 4px double orange;
+    padding: 0.7rem 3rem;
+    background: #474747;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: auto;
+    display: block;
+    margin-top: 5rem;
   }
 
   #logo {
@@ -298,7 +374,10 @@
   }
 
   .intro {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin-top: 6rem;
+    color: black;
+    text-align: center;
   }
   
   #logo-wrapper {
@@ -334,7 +413,7 @@
   }
 
   .current-page {
-    color: cornflowerblue;
+    border-bottom: 1px solid orange;
   }
 
   #menu {
@@ -356,6 +435,7 @@
 
   .single-event-img {
     width: 45vw;
+    padding-bottom: 3rem;
   }
 
   /* Form */
@@ -474,7 +554,7 @@ h3 {
 p {
   font-size: 1rem;
   color: #474747;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1rem;
   line-height: 1.2em;
 }
 
@@ -496,14 +576,13 @@ a {
 }
 
 .a-links:hover, .a-links-four:hover {
-  background: #6c6c6c;
-  color: white;
+  background: orange;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .a-links-two {
-  margin: 0.3rem 0rem;
+  margin: 0.3rem 1rem 0rem 0rem;
 }
 
 .a-links-three {
@@ -525,10 +604,6 @@ a {
   min-height: calc(100vh - 7rem);
   margin: auto;
   padding-bottom: 4rem;
-}
-
-.wrapper-two {
-  background-color: transparent;
 }
 
 /* NAV-BAR */
@@ -554,13 +629,21 @@ a {
 
 .button-large:hover {
   cursor: pointer;
-  background: #6c6c6c;
+  background: orange;
+  color: black;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .button-large-two {
   margin-top: 2rem;
+}
+
+.button-large-home:hover {
+  cursor: pointer;
+  color: orange;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 /* Events pages */
@@ -627,6 +710,7 @@ time {
   padding-bottom: 0.5rem;
   display:block;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 /* FAQ Page */
@@ -663,12 +747,20 @@ time {
 .single-event-img {
   display: block;
   margin: 0 auto;
-  padding-bottom: 3rem;
 }
 
 .single-event {
   display: block;
   padding: 0.4rem 0rem 0.8rem 0rem;
+  font-weight: bold;
+}
+
+.individual-event-div {
+  padding: 0.5rem;
+  border: 1px solid darkgray;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #E0E4E7;
 }
 
 /*Projects*/
@@ -734,6 +826,12 @@ textarea {
   color: red;
 }
 
+/* Inspirations */
+
+hr.style2 {
+	border-top: 4px double orange;
+}
+
 /* Resouces */
 
 .resource-links {
@@ -742,7 +840,7 @@ textarea {
 
 .resource-link {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* ///// */

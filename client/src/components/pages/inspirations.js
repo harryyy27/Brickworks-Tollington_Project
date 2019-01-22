@@ -23,6 +23,8 @@ componentDidMount = () => {
             <p>
                 We are now supporting local people to develop their own social actions, to increase the sense of power and forge relationships with those providing public services to explore how local people can be more involved in local decision making and how they might better influence service provision.
             </p>
+
+        <hr class="style2"></hr>
             
         <h2 className='h2-two'>The 'locality' initiative in Tollington</h2>
             <p>
