@@ -22,9 +22,8 @@ const EventComp = ({ event_id, event_name, event_description, event_date_time, e
           <p>{event_description.slice(0,200)+'...'}</p>
         <Link className="a-links-four" key={event_id} to={'/event-detailed/' + event_name} >
         Find out more
-        </Link >
-      </div>
-  
+      </Link >
+    </div>
   )
 }
 
@@ -48,16 +47,19 @@ const SingleEvent = ({ event_id, event_name, event_description, event_date_time,
     <div key={event_id} >
       <img className='single-event-img' src={Photo[0].url}/>
       <h3>Event Information</h3>
-      <time>
-        Time: &nbsp; <span> {event_date_time}</span>
-      </time>
-      <span className="single-event">Location: &nbsp; {event_location}</span>
-      <p> {event_description}</p>
+      <div className='individual-event-div'>
+        <time>
+          Time: &nbsp; <span> {event_date_time}</span>
+        </time>
+        <span className="single-event">Location: &nbsp; {event_location}</span>
+        <p> {event_description}</p>
+      </div>
       <h3>Contact us</h3>
-      <span className="single-event">Name: {fullname_event_organiser}</span>
-      <span className="single-event">E-mail: {email_event_organiser}</span>
-      <span className="single-event">Telephone: {telephone_event_organiser}</span>
-      
+      <div className='individual-event-div'>
+        <span className="single-event">Name: {fullname_event_organiser}</span>
+        <span className="single-event">E-mail: {email_event_organiser}</span>
+        <span className="single-event">Telephone: {telephone_event_organiser}</span>
+      </div>
     </div>
   )
 }
@@ -75,9 +77,11 @@ else {
       <span className="single-event">Location: &nbsp; {event_location}</span>
       <p> {event_description}</p>
       <h3>Contact us</h3>
-      <span className="single-event">Name: {fullname_event_organiser}</span>
-      <span className="single-event">E-mail: {email_event_organiser}</span>
-      <span className="single-event">Telephone: {telephone_event_organiser}</span>
+      <div className='individual-event-div'>
+        <span className="single-event">Name: {fullname_event_organiser}</span>
+        <span className="single-event">E-mail: {email_event_organiser}</span>
+        <span className="single-event">Telephone: {telephone_event_organiser}</span>
+      </div>
   </div>
 
   )
