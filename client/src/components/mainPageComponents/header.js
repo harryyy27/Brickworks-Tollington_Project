@@ -155,11 +155,9 @@ takeMeHome = () => {
 
       
     <header id="menu-wrapper">
-    {
-      process.env.NODE_ENV !=='test' ?
-      <HeaderLogo />
-      : null
-    }
+      <HeaderLogo takeMeHome={this.takeMeHome}/>
+     
+    
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 

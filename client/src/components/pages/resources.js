@@ -45,7 +45,7 @@ render() {
         </ol>
         <div className='resource-links'> 
 
-        <hr class="style2"></hr>
+        <hr className="style2"></hr>
         <br></br>
 
         <p className='question'>Here are some useful links to get you started:</p>
