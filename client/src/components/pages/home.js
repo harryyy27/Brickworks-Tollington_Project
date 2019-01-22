@@ -34,7 +34,7 @@ componentDidMount = () => {
           }
           <figcaption className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society
           </figcaption>
-          <button className='button-large-home' onClick={this.addEvent}>Get Involved</button>
+          <button data-testid="home-button" className='button-large-home' onClick={this.addEvent}>Get Involved</button>
           </main>
         </div>
     )}

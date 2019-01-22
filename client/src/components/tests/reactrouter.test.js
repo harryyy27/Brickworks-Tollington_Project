@@ -3,6 +3,7 @@ import {Link, Route, Router, Switch} from 'react-router-dom'
 import {createMemoryHistory} from 'history'
 import {render, fireEvent, cleanup} from 'react-testing-library'
 import App from '../App';
+import Home from '../pages/home'
 
 
 
@@ -29,16 +30,31 @@ import App from '../App';
   jest.mock('../mainPageComponents/img/homeContent.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/bike.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/validationIcon.js', ()=> ()=> <div>SHHHMOCK</div>)
-  jest.mock('../pages/social-actions', () => ()=><div>SHMOCKKK</div>)
+  // jest.mock('../pages/social-actions', () => ()=><div>SHMOCKKK</div>)
   jest.mock('../pages/list-event', () => ()=><div>SHMOCKKK</div>)
   test('rendering App will produce homepage, testing about page', () => {
     const {getByTestId, getByText} = renderWithRouter(<App />)
     //import necessary commands and components
     const menu = getByTestId('menu')
-    expect(getByTestId('home-page').lastChild.textContent).toBe('Get Involved')
+    const button = getByTestId('home-button');
+    expect(button.textContent).toBe('Get Involved')
   
   })
 
+  test('Home page button takes us to social actions page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
+    const button = getByTestId('home-button');
+    expect(button.textContent).toBe('Get Involved');
+
+    fireEvent.click(button);
+    expect(getByTestId('social-actions-page').firstChild.textContent).toBe('Social Actions')
+
+
+  
+  
+  })
   // test('able to reach resources page', () => {
   //   const {getByTestId, getByText} = renderWithRouter(<App />)
   //   //import necessary commands and components
