@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import logoImg from '../../../public/images/brickworks-logo-2.svg';
+import HeaderLogo from './img/headerLogo';
 
 
 class Nav extends React.Component {
@@ -18,6 +18,7 @@ componentDidDisappear = (menu) => {
   
 }
 componentDidMount = () => {
+  if(process.env.NODE_ENV !== 'test'){
   const pathname = this.props.location.pathname;
   const menu = document.getElementById('menu');
   console.log(pathname);
@@ -89,6 +90,7 @@ componentDidMount = () => {
     }
   })
 }
+}
 
 toggleMenu = (e) => {
   
@@ -153,10 +155,11 @@ takeMeHome = () => {
 
       
     <header id="menu-wrapper">
-      <div id="logo-wrapper" onClick={this.takeMeHome}>
-        <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
-        <p id='name-nav'>RICKWORKS</p>
-      </div>
+    {
+      process.env.NODE_ENV !=='test' ?
+      <HeaderLogo />
+      : null
+    }
       <nav id="menu" 
            aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
            data-testid="actual-menu" 

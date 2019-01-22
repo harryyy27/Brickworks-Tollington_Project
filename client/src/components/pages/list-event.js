@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormErrors} from './eventComp';
-import tickIcon from '../../../public/images/tick.png';
-import crossIcon from '../../../public/images/cancel.svg';
+import { NameIcon, EmailIcon, DesIcon } from '../mainPageComponents/img/validationIcon'
+
 
 class ListEvent extends React.Component {
     state = { 
@@ -40,44 +40,41 @@ console.log('BEFORE SWITCH', this.state.nameValid);
       case 'name':
       nameValid = (value.length >=2 ) 
       fieldValidationErrors.name = nameValid ? '' : ' is too short' ;
-      const nicon = document.getElementById("name-icon");
+      if(process.env.NODE_ENV !== 'test'){
       if(nameValid){
-        nicon.src=tickIcon;
-        nicon.className = "validate"
+        this.name.updateImg('valid')
       }
       else {
-        nicon.src=crossIcon;
-        nicon.className = "validate"
+        this.name.updateImg()
       }
+    }
       break;
       case 'email':
       //negated emailValid twice as (value.match(..)) gives null or some other value, we need to turn that to boolean, true or false for readability
       emailValid = !(!(value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ) );
       fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-      const eicon = document.getElementById("email-icon");
-      if(emailValid){
-        eicon.src=tickIcon;
-        eicon.className = "validate"
-      }
-      else {
-        eicon.src=crossIcon;
-        eicon.className = "validate"
-      }
+      if(process.env.NODE_ENV !== 'test'){
+        if(emailValid){
+          this.email.updateImg('valid')
+        }
+        else {
+          this.email.updateImg()
+        }
+    }
       break;
       
       case 'description':
       // descriptionValid = (value != '');
       descriptionValid = (value.length >= 5);
       fieldValidationErrors.description = descriptionValid ? '' : ' is too short' ;
-      const dicon = document.getElementById("des-icon");
-      if(descriptionValid){
-        dicon.src=tickIcon;
-        dicon.className = "validate"
-      }
-      else {
-        dicon.src=crossIcon;
-        dicon.className = "validate"
-      }
+      if(process.env.NODE_ENV !== 'test'){
+        if(descriptionValid){
+          this.des.updateImg('valid')
+        }
+        else {
+          this.des.updateImg()
+        }
+    }
       break;
 
       default:
@@ -153,7 +150,7 @@ console.log('BEFORE SWITCH', this.state.nameValid);
                 name="name" 
                 value={this.state.name} 
                 onChange= {this.handleChange}/>
-          <img id="name-icon" className="invisible" alt="validation"></img>
+          <NameIcon ref={(ref)=>{this.name=ref}}/>
           <label className='form-label' 
                  htmlFor="email">Email  <span className='red-asterisk'>*</span>
           </label>
@@ -163,7 +160,8 @@ console.log('BEFORE SWITCH', this.state.nameValid);
                  name="email" 
                  value={this.state.email} 
                  onChange= {this.handleChange}/>
-          <img id="email-icon" className="invisible" alt="validation"></img>
+
+          <EmailIcon ref={(ref)=>{this.email = ref}}/>
           <label className='form-label' 
                  htmlFor="phone">Telephone Number</label>
           <input className='form-box' 
@@ -189,7 +187,7 @@ console.log('BEFORE SWITCH', this.state.nameValid);
                     value={this.state.description} 
                     onChange={this.handleChange}>
           </textarea>
-          <img id="des-icon" className="invisible" alt="validation"></img>
+          <DesIcon ref={(ref)=>{this.des=ref}}/>
 
           <label className='form-label' htmlFor="date">Date</label>
           <input className='form-box'type="text" id="date" name="date" value={this.state.date} onChange= {this.handleChange}/>

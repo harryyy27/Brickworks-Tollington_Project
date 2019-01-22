@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../../../public/images/brickworks-logo.svg';
+import HomeContent from '../mainPageComponents/img/homeContent';
 
 class Home extends React.Component {
 
@@ -26,17 +26,16 @@ componentDidMount = () => {
           <div className='home-div'>
             <h1 className='brickworks'>BRICKWORKS</h1>
           </div>
-            {/* <figure id='logo'> */}
-              {/* <img id='logo-img' src={logoImg} alt='Brickworks logo'/> */}
-              <figcaption className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society
-              </figcaption>
-            {/* </figure>  */}
-            <button className='button-large-home' onClick={this.addEvent}>Get Involved</button>
+          { process.env.NODE_ENV !== 'test' ?
+             <HomeContent />:
+            null
+          }
+          <figcaption className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society
+          </figcaption>
+          <button className='button-large-home' onClick={this.addEvent}>Get Involved</button>
           </main>
         </div>
-      // </div>
     )}
 }
-
 export default Home;
 
