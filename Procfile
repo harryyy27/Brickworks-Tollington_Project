@@ -1,1 +1,1 @@
-web: npm run parcel:build
+web: npm run prod

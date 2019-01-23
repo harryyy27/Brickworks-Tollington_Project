@@ -11,6 +11,7 @@
     "parcel:watch": "parcel watch client/public/index.html",
     "parcel:build": "parcel build client/public/index.html",
     "dev": "concurrently --killall node \"npm run parcel:watch\" \"nodemon src/server.js\"",
+    "prod": "concurrently --killall node \"npm run parcel:watch\" \"node src/server.js\"",
     "heroku-prebuild": "",
     "heroku-postbuild": "",
     "postinstall": "npm run parcel:build"
