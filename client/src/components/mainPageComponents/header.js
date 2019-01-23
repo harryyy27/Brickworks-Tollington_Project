@@ -26,6 +26,7 @@ componentDidMount = () => {
     if(window.innerWidth<=1080){
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
     }
+    
   }
   else if(pathname.indexOf('event-detailed')!==-1){
     const menuItem=document.getElementById("social-actions");
@@ -45,7 +46,7 @@ componentDidMount = () => {
     menumarker.className = 'nav-link current-page';
   }
   window.addEventListener('resize', ()=>{
-    if(window.innerWidth<748){
+    if(window.innerWidth<1081){
       const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
       icon.focus();
@@ -148,6 +149,9 @@ takeMeHome = () => {
   this.props.history.push('/');
   let oldpage = document.querySelector('.current-page');
   oldpage.classList.remove('current-page');
+  const home = document.getElementById('home');
+        home.className ="nav-link current page"
+  
 }
   
   render() {

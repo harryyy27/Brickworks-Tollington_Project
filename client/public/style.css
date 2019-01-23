@@ -349,7 +349,7 @@
     text-transform: uppercase;
     margin: auto;
     display: block;
-    margin-top: 5rem;
+    margin-top: 2.3rem;
   }
 
   #logo {
@@ -375,7 +375,7 @@
 
   .intro {
     font-size: 1.5rem;
-    margin-top: 6rem;
+    margin-top: 3rem;
     color: black;
     text-align: center;
   }
@@ -847,4 +847,7 @@ hr.style2 {
 
 .invisible {
   display: none;
+}
+*:focus {
+  border: 5px solid orangered;
 }

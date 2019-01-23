@@ -49,10 +49,20 @@ class App extends React.Component {
       menuBtn.focus();
     }
     else {
+      if(window.innerWidth<=1080){
     const focusable = Array.from(document.querySelectorAll('#icon, button, a, input, select, textarea, [tabIndex]:not([tabIndex="-1"])')).filter(element=> element.tabIndex ===0);
     if(focusable.length !== 0){
     focusable[0].focus();
     }
+  }
+    else {
+      const brickHome = document.getElementById('logo-wrapper');
+      brickHome.focus();
+      console.log(brickHome);
+      console.log(document.activeElement);
+      
+    }
+  
   }
     /* Tabbing functions */
     document.addEventListener('keydown', (event)=>{
@@ -73,6 +83,7 @@ class App extends React.Component {
           menuBtn.click();
           menuBtn.focus();
         }
+        
         break;
         
         case 'ArrowUp':

@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeContent from '../mainPageComponents/img/homeContent';
 
 class Home extends React.Component {
 
@@ -28,12 +27,9 @@ componentDidMount = () => {
           <div className='home-div'>
             <h1 className='brickworks'>BRICKWORKS</h1>
           </div>
-          { process.env.NODE_ENV !== 'test' ?
-             <HomeContent />:
-            null
-          }
-          <figcaption className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society
-          </figcaption>
+          
+          <p className='intro'>Brickworks is a social-action hub rooted in Tollington that actively fosters grass-roots action and supports local people to build the community and create a better society
+          </p>
           <button data-testid="home-button" className='button-large-home' onClick={this.addEvent}>Get Involved</button>
           </main>
         </div>
