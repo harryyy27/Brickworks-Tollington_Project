@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
     "test": "jest",
     "start": " node src/server.js",
@@ -13,8 +12,8 @@
     "parcel:build": "parcel build client/public/index.html",
     "dev": "concurrently --killall node \"npm run parcel:watch\" \"nodemon src/server.js\"",
     "heroku-prebuild": "",
-    "heroku-postbuild": ""
-    
+    "heroku-postbuild": "",
+    "postinstall": "npm run parcel:build"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,6 @@
     "concurrently": "^4.0.1",
     "env2": "^2.2.2",
     "es6-promise": "^4.2.5",
-    "event-stream": "^4.0.1",
     "express": "^4.16.3",
     "fix": "0.0.6",
     "history": "^4.7.2",
@@ -69,5 +67,8 @@
     "react-testing-library": "^5.2.0",
     "supertest": "^3.3.0"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "node": "v10.6.0"
+  }
 }
