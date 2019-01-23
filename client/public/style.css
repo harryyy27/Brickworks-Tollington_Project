@@ -339,7 +339,7 @@
     border: 9px solid black;
     font-size: 4rem;
   }
-  
+
   .button-large-home {
     border: 4px double orange;
     padding: 0.7rem 3rem;
@@ -847,4 +847,7 @@ hr.style2 {
 
 .invisible {
   display: none;
+}
+*:focus {
+  border: 5px solid orangered;
 }

@@ -46,7 +46,7 @@ componentDidMount = () => {
     menumarker.className = 'nav-link current-page';
   }
   window.addEventListener('resize', ()=>{
-    if(window.innerWidth<748){
+    if(window.innerWidth<1081){
       const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
       icon.focus();
