@@ -3,6 +3,7 @@ import {Link, Route, Router, Switch} from 'react-router-dom'
 import {createMemoryHistory} from 'history'
 import {render, fireEvent, cleanup} from 'react-testing-library'
 import App from '../App';
+import Home from '../pages/home'
 
 
 
@@ -29,86 +30,101 @@ import App from '../App';
   jest.mock('../mainPageComponents/img/homeContent.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/bike.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/validationIcon.js', ()=> ()=> <div>SHHHMOCK</div>)
-  jest.mock('../pages/social-actions', () => ()=><div>SHMOCKKK</div>)
+  // jest.mock('../pages/social-actions', () => ()=><div>SHMOCKKK</div>)
   jest.mock('../pages/list-event', () => ()=><div>SHMOCKKK</div>)
   test('rendering App will produce homepage, testing about page', () => {
     const {getByTestId, getByText} = renderWithRouter(<App />)
     //import necessary commands and components
-    const menu = getByTestId('menu')
-    expect(getByTestId('home-page').lastChild.textContent).toBe('Next')
-   //open menu
-    fireEvent.click(menu);
-    //click about link
-    fireEvent.click(getByTestId('about'))
-    expect(getByTestId('about-page').firstChild.textContent).toBe('About')
+    const button = getByTestId('home-button');
+    expect(button.textContent).toBe('Get Involved')
+  
   })
 
-  // test('able to reach resources page', () => {
-  //   const {getByTestId, getByText} = renderWithRouter(<App />)
-  //   //import necessary commands and components
-  //   const menu = getByTestId('menu')
-  //   //open mennu
-  //   fireEvent.click(menu);
-  //   //click about link
-  //   fireEvent.click(getByTestId('resources'))
-  //   expect(getByTestId('resources-page').firstChild.textContent).toBe('Resources')
-  // })
+  test('Home page button takes us to social actions page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const button = getByTestId('home-button');
+    expect(button.textContent).toBe('Get Involved');
 
-  // test('able to reach inspirations page', () => {
-  //   const {getByTestId, getByText} = renderWithRouter(<App />)
-  //   //import necessary commands and components
-  //   const menu = getByTestId('menu')
+    fireEvent.click(button);
+    expect(getByTestId('social-actions-page').firstChild.textContent).toBe('Social Actions');
+  })
+
+  jest.useFakeTimers();
+  test('able to reach resources page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
+    //open mennu
+    fireEvent.click(menu);
+    jest.advanceTimersByTime(1000);
+    //click about link
+    fireEvent.click(getByTestId('resources'))
+    expect(getByTestId('resources-page').firstChild.textContent).toBe('Resources')
+  })
+
+  jest.useFakeTimers();
+  test('able to reach inspirations page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
     
-  //  //open menu
-  //   fireEvent.click(menu);
-  //   //click about link
-  //   fireEvent.click(getByTestId('inspirations'))
-  //   expect(getByTestId('inspirations-page').firstChild.textContent).toBe('Local Inspirational Stories')
-  // })
+   //open menu
+    fireEvent.click(menu);
+    jest.advanceTimersByTime(1000);
+    //click about link
+    fireEvent.click(getByTestId('inspirations'))
+    expect(getByTestId('inspirations-page').firstChild.textContent).toBe('Local Inspirational Stories')
+  })
 
-  // test('able to reach faqs page', () => {
-  //   const {getByTestId, getByText} = renderWithRouter(<App />)
-  //   //import necessary commands and components
-  //   const menu = getByTestId('menu')
+  jest.useFakeTimers();
+  test('able to reach faqs page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
     
-  //  //open menu
-  //   fireEvent.click(menu);
-  //   //click about link
-  //   fireEvent.click(getByTestId('faq'))
-  //   expect(getByTestId('faq-page').firstChild.textContent).toBe('FAQs')
-  // })
+   //open menu
+    fireEvent.click(menu);
+    jest.advanceTimersByTime(1000);
+    //click about link
+    fireEvent.click(getByTestId('faq'))
+    expect(getByTestId('faq-page').firstChild.textContent).toBe('FAQs')
+  })
 
-  // test('start a social action link takes you to topten page', () => {
-  //   const {getByTestId, getByText} = renderWithRouter(<App />)
-  //   //import necessary commands and components
-  //   const menu = getByTestId('menu')
+  jest.useFakeTimers();
+  test('start a social action link takes you to topten page', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
     
-  //  //open menu
-  //   fireEvent.click(menu);
-  //   //click about link
-  //   fireEvent.click(getByTestId('form'))
-  //   expect(getByTestId('topten-page').firstChild.textContent).toBe('Things To Think About')
-  // })
+   //open menu
+    fireEvent.click(menu);
+    jest.advanceTimersByTime(1000);
+    //click about link
+    fireEvent.click(getByTestId('form'))
+    expect(getByTestId('topten-page').firstChild.textContent).toBe('Top Ten Tips')
+  })
 
-
-  // test('able to reach social actions page', () => {
-  //   const {getByTestId, getByText} = renderWithRouter(<App />)
-  //   //import necessary commands and components
-  //   const menu = getByTestId('menu')
+  jest.useFakeTimers();
+  test('able to reach social actions through the nav bar', () => {
+    const {getByTestId, getByText} = renderWithRouter(<App />)
+    //import necessary commands and components
+    const menu = getByTestId('menu')
   
-  //  //open menu
-  //   fireEvent.click(menu);
-  //   //click about link
-  //   fireEvent.click(getByTestId('social-actions'))
-  //   expect(getByTestId('social-actions-page').firstChild.textContent).toBe('Social Actions')
-  // })
+   //open menu
+    fireEvent.click(menu);
+    jest.advanceTimersByTime(1000);
+    //click about link
+    fireEvent.click(getByTestId('social-actions'))
+    expect(getByTestId('social-actions-page').firstChild.textContent).toBe('Social Actions')
+  })
   
-  // test('landing on a bad page', () => {
-  //   const {getByTestId} = renderWithRouter(<App />, {
-  //     route: '/whereTheHellAreYouGoing?',
-  //   })
-  //   const error = getByTestId('error');
-  //   // normally I'd use a data-testid, but just wanted to show this is also possible
-  //   expect(error.firstChild.textContent).toMatch('Error 404')
-  // })
+  test('landing on a bad page', () => {
+    const {getByTestId} = renderWithRouter(<App />, {
+      route: '/whereTheHellAreYouGoing?',
+    })
+    const error = getByTestId('error');
+    // normally I'd use a data-testid, but just wanted to show this is also possible
+    expect(error.firstChild.textContent).toMatch('Error 404')
+  })
  

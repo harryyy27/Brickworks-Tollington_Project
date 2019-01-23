@@ -4,15 +4,15 @@ import React from 'react';
 class Faq extends React.Component {
 
 componentDidMount = () => {
+    if(process.env.NODE_ENV !== "test"){
     window.scrollTo(0,0);
+    }
 }
 
     render() {
         return(
-    <div>
-        <div data-testid = "faq-page" className='wrapper'>
+        <main data-testid = "faq-page" className='wrapper'>
         <h1 className='pageHeadings'>FAQs</h1>
-        <main>
             <ul>
                     <li><p className='question'>How does Brickworks connect me with others who can help me develop my idea for a social action?</p>
                 <p className='answer'>"We have 20 trained Community Organisers who can help you develop your idea, build connections with local people, and find others who are interested in the same social action idea as you."</p></li>
@@ -27,9 +27,7 @@ componentDidMount = () => {
                      <li><p className='question'>How are my personal details that I am entering being used?</p></li>
                 <a className='a-links a-links-three' href='../../../public/assets/privacy-policy-hcca.pdf'>Click here to read the Brickworks Social Action Hub privacy policy</a>
             </ul>
-        </main>
-        </div>
-    </div>
+    </main>
   );}
 }
 //     <footer>

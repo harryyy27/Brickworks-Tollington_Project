@@ -17,7 +17,7 @@ constructor(props){
   }
 }
 componentDidMount() {
-  
+  if(process.env.NODE_ENV !== 'test'){
   window.scrollTo(0,0);
 
   getAllEvents()
@@ -39,6 +39,7 @@ componentDidMount() {
 })
 
 .catch(err => console.log(err));
+  }
 }
 
 addEvent = () => {

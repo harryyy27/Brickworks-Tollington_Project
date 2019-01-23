@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 class TopTen extends React.Component {
 
 componentDidMount = () => {
+    if(process.env.NODE_ENV !== "test"){
     window.scrollTo(0,0);
+    }
 }
 
 render() {
@@ -24,7 +26,7 @@ render() {
                 <li className='top-ten-li'>Share the impact of your action in creative and imaginative ways to capture attention.</li>
                 <li className='top-ten-li'>Don't give up, have patience and be committed.</li>
             </ol>
-            <hr class="style2"></hr>
+            <hr className="style2"></hr>
             <div className='top-ten-links'>
             <label htmlFor="all-events">
                 <Link to='/start-social-action'><p className='a-links'>Click here to register an interest to start a social action!</p></Link>
