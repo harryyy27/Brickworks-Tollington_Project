@@ -13,8 +13,8 @@
     "parcel:build": "parcel build client/public/index.html",
     "dev": "concurrently --killall node \"npm run parcel:watch\" \"nodemon src/server.js\"",
     "heroku-prebuild": "",
-    "heroku-postbuild": "",
-    "postinstall": "npm run parcel:build"
+    "heroku-postbuild": ""
+    
   },
   "repository": {
     "type": "git",
