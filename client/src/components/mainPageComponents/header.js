@@ -26,6 +26,7 @@ componentDidMount = () => {
     if(window.innerWidth<=1080){
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
     }
+    
   }
   else if(pathname.indexOf('event-detailed')!==-1){
     const menuItem=document.getElementById("social-actions");
@@ -148,6 +149,9 @@ takeMeHome = () => {
   this.props.history.push('/');
   let oldpage = document.querySelector('.current-page');
   oldpage.classList.remove('current-page');
+  const home = document.getElementById('home');
+        home.className ="nav-link current page"
+  
 }
   
   render() {
