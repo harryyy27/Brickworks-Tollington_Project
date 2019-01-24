@@ -56,10 +56,8 @@ class App extends React.Component {
     }
   }
     else {
-      const brickHome = document.getElementById('logo-wrapper');
-      brickHome.focus();
-      console.log(brickHome);
-      console.log(document.activeElement);
+      // const brickHome = document.getElementById('logo-wrapper');
+      // brickHome.focus();
       
     }
   
@@ -83,8 +81,8 @@ class App extends React.Component {
           menuBtn.click();
           menuBtn.focus();
         }
-        else if(e.target.parentElement.parentElement.id === "menu"){
-          e.target.focus()
+        else if(window.innerWidth>1080 && event.target.parentElement.parentElement.id === "menu"){
+          event.target.focus()
 
         }
         

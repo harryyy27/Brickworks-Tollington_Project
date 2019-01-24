@@ -87,7 +87,7 @@ componentDidMount = () => {
     if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerwidth<=1080){
       const icon = document.getElementById("icon");
       const menuLinks = document.querySelectorAll('.nav-link');
-      const header = document.querySelector("header");
+      
       icon.className='image image-closed';
       menu.className='menu menu-closed';
       menu.setAttribute("aria-hidden", "true");
@@ -96,7 +96,7 @@ componentDidMount = () => {
         el.setAttribute('tabIndex',"-1");
       })
       icon.focus();
-      this.componentDidDisappear(menu,header);
+      this.componentDidDisappear(menu);
     }
   })
 }
