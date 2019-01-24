@@ -34,4 +34,4 @@ componentDidMount = () => {
 //         &copy; Brickworks Social Action Community 2018. 
 //     </footer>     
 
-export {Faq};
+export default Faq;

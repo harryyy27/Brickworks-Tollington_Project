@@ -42,4 +42,4 @@ render() {
     )
 }
 }
-export {TopTen};
+export default TopTen;

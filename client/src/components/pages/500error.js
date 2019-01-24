@@ -6,4 +6,4 @@ const Error500 = () => (
     </div>
 )
 
-export {Error500};
+export default Error500;

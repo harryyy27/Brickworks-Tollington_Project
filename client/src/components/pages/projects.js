@@ -23,4 +23,4 @@ render() {
     )
 }
 }
-export {Projects};
+export default Projects;

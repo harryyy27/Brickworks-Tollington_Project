@@ -61,4 +61,4 @@ render() {
     )
     }
 }
-export {Resources};
+export default Resources;

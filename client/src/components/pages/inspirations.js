@@ -39,4 +39,4 @@ componentDidMount = () => {
     )}
 }
 
-export {Inspiration};
+export default Inspiration;

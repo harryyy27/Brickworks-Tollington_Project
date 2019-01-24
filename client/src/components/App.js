@@ -1,21 +1,149 @@
 import React from 'react';
 // import { render } from 'react-dom';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import ListEvent from './pages/list-event';
+;
+// import ListEvent from './pages/list-event';
 import Nav from './mainPageComponents/header';
-import SocialActions from './pages/social-actions';
-import EventDetailed from './pages/event_detailed';
-import {Error} from './pages/error';
-import {Error500} from './pages/500error';
-import {Faq} from './pages/faq';
-import {Resources} from './pages/resources';
-import {Inspiration} from './pages/inspirations';
+// import SocialActions from './pages/social-actions';
+// import EventDetailed from './pages/event_detailed';
+// import {Error} from './pages/error';
+// import {Error500} from './pages/500error';
+// import {Faq} from './pages/faq';
+// import {Resources} from './pages/resources';
+// import {Inspiration} from './pages/inspirations';
 
-import {TopTen} from './pages/topten';
-import ContactUs from './pages/contactUs';
-import {Projects} from './pages/projects';
+// import {TopTen} from './pages/topten';
+// import ContactUs from './pages/contactUs';
+// import {Projects} from './pages/projects';
 import {Footer} from './mainPageComponents/footer';
+
+
+class DynamicImport extends React.Component {
+  state = {
+    component: null
+  }
+  componentDidMount(){
+    this.props.load()
+      .then((mod)=>
+        this.setState(()=>
+        ({component: mod.default})
+      ))
+  }
+  render() {
+    return (
+      this.props.children(this.state.component)
+    )
+
+  }
+}
+
+const Home = (props) => {
+  return(
+  <DynamicImport load={()=> import('./pages/home')}>
+  {(Component)=> Component=== null ? <h1>loading</h1> :
+    <Component {...props} />}
+    </DynamicImport>
+  )
+}
+const ListEvent = (props) => {
+  return(
+    <DynamicImport load={()=> import('./pages/list-event')}>
+    {(Component)=> Component=== null ? <h1>loading</h1> :
+      <Component {...props} />}
+      </DynamicImport>
+    )
+  }
+  const SocialActions = (props) => {
+    return(
+      <DynamicImport load={()=> import('./pages/social-actions')}>
+      {(Component)=> Component=== null ? <h1>loading</h1> :
+        <Component {...props} />}
+        </DynamicImport>
+      )
+    }
+  const EventDetailed = (props) => {
+    return(
+      <DynamicImport load={()=> import('./pages/event_detailed')}>
+      {(Component)=> Component=== null ? <h1>loading</h1> :
+        <Component {...props} />}
+        </DynamicImport>
+      )
+    }
+  const Inspiration = (props) => {
+    return(
+      <DynamicImport load={()=> import('./pages/inspirations')}>
+      {(Component)=> Component=== null ? <h1>loading</h1> :
+        <Component {...props} />}
+        </DynamicImport>
+      )
+    }
+  const Error = (props) => {
+    return(
+      <DynamicImport load={()=> import('./pages/error')}>
+      {(Component)=> Component=== null ? <h1>loading</h1> :
+        <Component {...props} />}
+        </DynamicImport>
+      )
+    }
+  const Error500 = (props) => {
+    return(
+      <DynamicImport load={()=> import('./pages/500error')}>
+      {(Component)=> Component=== null ? <h1>loading</h1> :
+        <Component {...props} />}
+        </DynamicImport>
+      )
+    }
+            const Resources = (props) => {
+              return(
+                <DynamicImport load={()=> import('./pages/resources')}>
+                {(Component)=> Component=== null ? <h1>loading</h1> :
+                  <Component {...props} />}
+                  </DynamicImport>
+                )
+              }
+              const TopTen= (props) => {
+                return(
+                  <DynamicImport load={()=> import('./pages/topten')}>
+                  {(Component)=> Component=== null ? <h1>loading</h1> :
+                    <Component {...props} />}
+                    </DynamicImport>
+                  )
+                }
+                const ContactUs = (props) => {
+                  return(
+                    <DynamicImport load={()=> import('./pages/contactUs')}>
+                    {(Component)=> Component=== null ? <h1>loading</h1> :
+                      <Component {...props} />}
+                      </DynamicImport>
+                    )
+                  }
+                  const Projects = (props) => {
+                    return(
+                      <DynamicImport load={()=> import('./pages/projects')}>
+                      {(Component)=> Component=== null ? <h1>loading</h1> :
+                        <Component {...props} />}
+                        </DynamicImport>
+                      )
+                    }
+                    const Faq = (props) => {
+                      return(
+                        <DynamicImport load={()=> import('./pages/faq')}>
+                        {(Component)=> Component=== null ? <h1>loading</h1> :
+                          <Component {...props} />}
+                          </DynamicImport>
+                        )
+                      }
+//   import SocialActions from './pages/social-actions';
+// import EventDetailed from './pages/event_detailed';
+// import {Error} from './pages/error';
+// import {Error500} from './pages/500error';
+// import {Faq} from './pages/faq';
+// import {Resources} from './pages/resources';
+// import {Inspiration} from './pages/inspirations';
+
+// import {TopTen} from './pages/topten';
+// import ContactUs from './pages/contactUs';
+// import {Projects} from './pages/projects';
 
 const Navbar = withRouter(props => <Nav {...props }/>);
 class App extends React.Component {
@@ -26,6 +154,7 @@ class App extends React.Component {
       background: 'background-img',
     }
   }
+  
   setBackground = () => {
     if(process.env.NODE_ENV === 'test') {
       const background = document.getElementById('background');
@@ -136,6 +265,7 @@ class App extends React.Component {
     })
     
   }
+  
   render () {
   return (
     
@@ -143,7 +273,7 @@ class App extends React.Component {
       <div className='background-img'>
       <Navbar />
       <Switch>
-        <Route exact path='/' component= { Home } />
+        <Route exact path='/' component= {Home} />
         <Route path='/social-actions' render={(props) => <SocialActions {...props} updateNav={this.updateNav} />}/>
         <Route path='/promote-social-action' component= { ListEvent } />
         <Route path='/event-detailed' render={(props) => <EventDetailed {...props} data={this.state.data} />}/>
