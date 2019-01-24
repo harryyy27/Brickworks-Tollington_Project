@@ -83,6 +83,10 @@ class App extends React.Component {
           menuBtn.click();
           menuBtn.focus();
         }
+        else if(e.target.parentElement.parentElement.id === "menu"){
+          e.target.focus()
+
+        }
         
         break;
         
