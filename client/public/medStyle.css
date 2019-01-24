@@ -1,0 +1,60 @@
+@media only screen and (min-width: 749px) and (max-width: 1080px) {
+  
+    html {
+      font-size: 18px;
+    }
+    #menu {
+      width: 60vw;
+      right:0;
+    }
+  
+    h1 {
+      padding: 2rem 0rem;
+    }
+  
+    .wrapper {
+      width: 80%;
+      padding: 0rem 2rem 2.5rem;
+    }
+  
+    .wrapper-two {
+      background-color: #b4b4b4;
+    }
+  
+    .background-img {
+      background-image: url('./images/bricks.jpg');
+    }
+  
+    .brickworks {
+      font-size: 3rem;
+    }
+  
+    #logo-nav {
+      margin: 0.5rem;
+      height: 3rem;
+      padding-left: 1.5rem;
+      cursor: pointer;
+    }
+  
+    #bike-img {
+      width: 80vw;
+    }
+  
+    .nav-link {
+      width: 60vw
+    }
+   
+    .menu-closed > label {
+      transform: translate3d(70vw, 0, 0);
+    }
+  
+    .menu-open > label {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .single-event-img {
+      padding-bottom: 3rem;
+    }
+  
+  }
+  

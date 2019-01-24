@@ -1,0 +1,156 @@
+@media only screen and (min-width: 1081px) {
+    .wrapper {
+      max-width: 65%;
+      padding: 0rem 2rem 2.5rem;
+    }
+    
+    html {
+     font-size: 20px;
+    }
+  
+     
+    nav {
+       width: 100vw;
+       display: flex;
+       justify-content: space-evenly;
+    }
+  
+    h1 {
+      padding: 2rem 0rem;
+    }
+  
+    h3 {
+      padding-bottom: 1rem;
+    }
+  
+    h4 {
+      padding-bottom: 0.5rem;
+    }
+  
+   /*HOME PAGE */
+    
+   .background-img {
+    background-image: url('./images/bricks.jpg');
+    }
+  
+    .wrapper-two {
+      background-color: #b4b4b4;
+    }
+  
+    .home-div {
+      text-align: center;
+    }
+  
+    .brickworks {
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 1rem 1rem;
+      color: black;
+      border: 9px solid black;
+      font-size: 4rem;
+    }
+  
+    .button-large-home {
+      border: 4px double orange;
+      padding: 0.7rem 3rem;
+      background: #474747;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: auto;
+      display: block;
+      margin-top: 2.3rem;
+    }
+  
+    #logo {
+      background: white;
+      width:55vw;
+      margin: auto;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+     
+    #logo-img {
+       display: block;
+       width: 50%;
+       margin: auto; 
+       float: left; 
+    }
+  
+    #bike-img {
+      width: 50vw;
+    }
+  
+    .intro {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      color: black;
+      text-align: center;
+    }
+    
+    #logo-wrapper {
+      width: 20vw;
+      position:relative;
+      left:2vw;
+  
+    }
+  
+    #logo-nav {
+      height: 1.5rem;
+      padding: 0.7rem 0rem;
+      cursor: pointer;
+    }
+      
+    #name-nav {
+      position: absolute;
+      left: 0.9rem;
+      top: 0rem;
+      line-height: 3rem;
+      padding: 0;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      line-height: 3rem;
+      vertical-align: center;;
+      font-size: 0.8rem;
+    }
+  
+    .current-page {
+      border-bottom: 1px solid orange;
+    }
+  
+    #menu {
+      display: flex;
+      position: relative;
+      top: 0;
+    }
+  
+    #menu label {
+      height: 4rem;
+    }
+  
+    #logo {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  
+    /* Single-Events-Page */
+  
+    .single-event-img {
+      width: 45vw;
+      padding-bottom: 3rem;
+    }
+  
+    /* Form */
+    
+    form {
+      margin-left: 2rem;
+    }
+}

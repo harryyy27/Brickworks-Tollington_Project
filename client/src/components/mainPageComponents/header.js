@@ -56,7 +56,7 @@ componentDidMount = () => {
       const home = document.getElementById('home-label');
       home.className = "";
       /*Sets focus on navbar icon */
-      icon.tabIndex="1";
+      icon.tabIndex="0";
       icon.focus();
       
       menuLinks.forEach(el => {
@@ -239,7 +239,7 @@ takeMeHome = () => {
     <div  
       id="icon"
       className="image image-closed"
-      tabIndex={window.innerWidth< 1081 ? '1': '-1'}  
+      tabIndex={window.innerWidth< 1081 ? '0': '-1'}  
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  
