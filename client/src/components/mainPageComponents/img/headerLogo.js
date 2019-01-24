@@ -14,7 +14,7 @@ class HeaderLogo extends React.Component {
     }
     render(){
         return(
-            <figure tabIndex="0" id="logo-wrapper" onClick={this.props.takeMeHome}>     
+            <figure tabIndex={window.innerWidth>=1081 ? "0" : '-1'} id="logo-wrapper" onClick={this.props.takeMeHome}>     
                 <img id='logo-nav' src={logoImg} alt='Brickworks logo'/>
                 <figcaption id='name-nav'>RICKWORKS</figcaption>        
             </figure>

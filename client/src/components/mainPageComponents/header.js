@@ -45,12 +45,22 @@ componentDidMount = () => {
     const menumarker = document.getElementById(`${pathname.split('/')[1]}`);
     menumarker.className = 'nav-link current-page';
   }
+  /*Event Listener for screen resize */
   window.addEventListener('resize', ()=>{
     if(window.innerWidth<1081){
+      /*Reenable navbar class changes*/
+      menu.className ="menu menu-closed invisible";
       const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
+      /*Enable home route */
+      const home = document.getElementById('home-label');
+      home.className = "";
+      /*Sets focus on navbar icon */
+      icon.tabIndex="0";
       icon.focus();
+      
       menuLinks.forEach(el => {
+        /*Removes navliks from tab flow while menu is closed */
         el.setAttribute('tabIndex',"-1");
       })
     }
@@ -58,19 +68,18 @@ componentDidMount = () => {
     else {
       const menuLinks = document.querySelectorAll('.nav-link')
       menu.setAttribute("aria-hidden", "false");
-      
+      menu.className = "menu"
+      /*disable home route for icon */
+      const home = document.getElementById('home-label');
+      home.className = "invisible";
+      const logoWrapper = document.getElementById("logo-wrapper");
+      logoWrapper.focus();
+      icon.tabIndex="-1";
       menuLinks.forEach(el => {
         el.setAttribute('tabIndex',"0");
       })
     }
-    if(window.innerWidth>=1081){
-      const home = document.getElementById('home-label');
-      home.className = "invisible";
-    }
-    else {
-      const home = document.getElementById('home-label');
-      home.className = "";
-    }
+   
   })
   document.addEventListener("click", (event)=>{
     
@@ -78,7 +87,7 @@ componentDidMount = () => {
     if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerwidth<=1080){
       const icon = document.getElementById("icon");
       const menuLinks = document.querySelectorAll('.nav-link');
-      const header = document.querySelector("header");
+      
       icon.className='image image-closed';
       menu.className='menu menu-closed';
       menu.setAttribute("aria-hidden", "true");
@@ -87,7 +96,7 @@ componentDidMount = () => {
         el.setAttribute('tabIndex',"-1");
       })
       icon.focus();
-      this.componentDidDisappear(menu,header);
+      this.componentDidDisappear(menu);
     }
   })
 }
@@ -102,6 +111,7 @@ toggleMenu = (e) => {
   oldpage.classList.remove('current-page');
   
   e.target.className = "nav-link current-page";
+  e.target.focus()
   }
   else if(e.target.textContent==="Express"){
 
@@ -151,6 +161,7 @@ takeMeHome = () => {
   oldpage.classList.remove('current-page');
   const home = document.getElementById('home');
         home.className ="nav-link current page"
+        home.focus();
   
 }
   
@@ -163,14 +174,14 @@ takeMeHome = () => {
      
     
       <nav id="menu" 
-           aria-hidden={window.innerWidth< 748 ? 'true': 'false'}  
+           aria-hidden={window.innerWidth< 1081 ? 'true': 'false'}  
            data-testid="actual-menu" 
-           className="menu menu-closed invisible">
+           className={window.innerWidth<1081 ? "menu menu-closed invisible" : "menu"}>
            
-        <label id="home-label" htmlFor="home" className={window.innerWidth>=1080 ? "invisible": ""}>
+        <label id="home-label" htmlFor="home" className={window.innerWidth>1080 ? "invisible": ""}>
           <Link className='nav-link'
                 id="home" 
-                tabIndex={window.innerWidth< 748 ? '-1': '0'} 
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'} 
                 data-testid="home" 
                 onClick={this.toggleMenu} 
                 to='/'>Home</Link>
@@ -179,7 +190,7 @@ takeMeHome = () => {
         <label htmlFor="social-actions">
           <Link className='nav-link'
                 id="social-actions"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'}  
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'}  
                 data-testid="social-actions" 
                 onClick={this.toggleMenu} 
                 to='/social-actions'>Social Actions</Link>
@@ -187,7 +198,7 @@ takeMeHome = () => {
         <label htmlFor="form">
           <Link className='nav-link'
                 id="topten"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'} 
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'} 
                 data-testid="form" 
                 onClick={this.toggleMenu} 
                 to='/topten'>Start a Social Action</Link>
@@ -195,7 +206,7 @@ takeMeHome = () => {
         <label htmlFor="projects">
           <Link className='nav-link'
                 id="projects"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'} 
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'} 
                 data-testid="projects-page" 
                 onClick={this.toggleMenu} 
                 to='/projects'>Projects</Link>
@@ -203,7 +214,7 @@ takeMeHome = () => {
         <label htmlFor="faq">
           <Link className='nav-link'
                 id="faq"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'}  
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'}  
                 data-testid="faq" 
                 onClick={this.toggleMenu} 
                 to='/faq'>FAQ</Link>
@@ -211,7 +222,7 @@ takeMeHome = () => {
         <label htmlFor="inspirations">
           <Link className='nav-link'
                 id="inspirations"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'}  
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'}  
                 data-testid="inspirations" 
                 onClick={this.toggleMenu} 
                 to='/inspirations'>Local Inspirations</Link>
@@ -219,7 +230,7 @@ takeMeHome = () => {
         <label htmlFor="resources">
           <Link className='nav-link'
                 id="resources"
-                tabIndex={window.innerWidth< 748 ? '-1': '0'}  
+                tabIndex={window.innerWidth< 1081 ? '-1': '0'}  
                 data-testid="resources" 
                 onClick={this.toggleMenu} 
                 to='/resources'>Resources & Tips</Link>
@@ -228,7 +239,7 @@ takeMeHome = () => {
     <div  
       id="icon"
       className="image image-closed"
-      tabIndex="1"
+      tabIndex={window.innerWidth< 1081 ? '0': '-1'}  
       data-testid="menu"
       aria-controls="menu"
       aria-haspopup="true"  

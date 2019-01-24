@@ -45,7 +45,7 @@ class App extends React.Component {
     const menu = document.getElementById('menu');
     const menuBtn = document.getElementById('icon');
     /* Setting focus upon page loading */
-    if(window.innerWidth<748){
+    if(window.innerWidth<1081){
       menuBtn.focus();
     }
     else {
@@ -56,10 +56,8 @@ class App extends React.Component {
     }
   }
     else {
-      const brickHome = document.getElementById('logo-wrapper');
-      brickHome.focus();
-      console.log(brickHome);
-      console.log(document.activeElement);
+      // const brickHome = document.getElementById('logo-wrapper');
+      // brickHome.focus();
       
     }
   
@@ -69,11 +67,11 @@ class App extends React.Component {
       console.log(document.activeElement);
       switch(event.key){
         case 'Tab':
-        if(!event.shiftKey &&document.activeElement===menu.lastElementChild.firstElementChild&& menu.className==="menu menu-open"){
+        if(!event.shiftKey &&document.activeElement===menu.lastElementChild.firstElementChild&& menu.className==="menu menu-open"&&window.innerWidth<1081){
           event.preventDefault();
           menuBtn.focus();
         }
-        else if(menu.className==="menu menu-open"&&event.shiftKey&&document.activeElement===menuBtn){
+        else if(menu.className==="menu menu-open"&&event.shiftKey&&document.activeElement===menuBtn && window.innerWidth<1081){
           event.preventDefault();
           menu.lastElementChild.firstElementChild.focus();
         }
@@ -83,18 +81,22 @@ class App extends React.Component {
           menuBtn.click();
           menuBtn.focus();
         }
+        else if(window.innerWidth>1080 && event.target.parentElement.parentElement.id === "menu"){
+          event.target.focus()
+
+        }
         
         break;
         
         case 'ArrowUp':
         
-        if(menu.className==="menu menu-open"&&document.activeElement===menuBtn&&window.innerWidth<768){
+        if(menu.className==="menu menu-open"&&document.activeElement===menuBtn&&window.innerWidth<1081){
           menu.lastElementChild.firstElementChild.focus();
         }
-        else if(document.activeElement === menu.firstElementChild.firstElementChild&&window.innerWidth<768){
+        else if(document.activeElement === menu.firstElementChild.firstElementChild&&window.innerWidth<1081){
           menuBtn.focus();
         }
-        else if(menu.className==="menu menu-open"&&window.innerWidth<768){
+        else if(menu.className==="menu menu-open"&&window.innerWidth<1081){
           // console.log(document.activeElement.parentElement.prev);
           document.activeElement.parentElement.previousElementSibling.firstElementChild.focus();
         }
@@ -103,20 +105,20 @@ class App extends React.Component {
         
         case 'ArrowDown':
         
-        if(menu.className==="menu menu-open"&& document.activeElement===menuBtn&&window.innerWidth<768){
+        if(menu.className==="menu menu-open"&& document.activeElement===menuBtn&&window.innerWidth<1081){
           console.log(menu.firstElementChild.firstElementChild)
           menu.firstElementChild.firstElementChild.focus();
         }
-        else if(document.activeElement === menu.lastElementChild.firstElementChild&&window.innerWidth<768){
+        else if(document.activeElement === menu.lastElementChild.firstElementChild&&window.innerWidth<1081){
           menuBtn.focus();
         }
-        else if(menu.className==="menu menu-open"&&window.innerWidth<768){
+        else if(menu.className==="menu menu-open"&&window.innerWidth<1081){
           // console.log(document.activeElement.parentElement.prev);
           document.activeElement.parentElement.nextSibling.firstElementChild.focus();
         }
         break;
         case 'Escape':
-        if(window.innerWidth<768){
+        if(window.innerWidth<1081){
        if(menu.className==="menu menu-open"){
         const menuLinks= document.querySelectorAll(".nav-link")
         icon.className='image image-closed';
