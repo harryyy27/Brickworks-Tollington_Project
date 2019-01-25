@@ -159,6 +159,15 @@ a {
   padding-bottom: 4rem;
 }
 
+.wrapper-two {
+  position: relative;
+  background-color: transparent;
+  top: 3rem;
+  min-height: calc(100vh - 7rem);
+  margin: auto;
+  padding-bottom: 4rem;
+}
+
 /* NAV-BAR */
 
 #logo {

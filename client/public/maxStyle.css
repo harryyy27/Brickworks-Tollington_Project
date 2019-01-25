@@ -34,7 +34,7 @@
     }
   
     .wrapper-two {
-      background-color: #b4b4b4;
+      background-color: transparent;
     }
   
     .home-div {
@@ -43,15 +43,15 @@
   
     .brickworks {
       display: inline-block;
-      margin-top: 3rem;
+      margin-top: 8rem;
       padding: 1rem 1rem;
-      color: black;
-      border: 9px solid black;
-      font-size: 4rem;
+      color: white;
+      border: 9px solid white;
+      font-size: 5rem;
     }
   
     .button-large-home {
-      border: 4px double orange;
+      border: 7px double orange;
       padding: 0.7rem 3rem;
       background: #474747;
       color: white;
@@ -59,7 +59,7 @@
       text-transform: uppercase;
       margin: auto;
       display: block;
-      margin-top: 2.3rem;
+      margin-top: 1rem;
     }
   
     #logo {
@@ -80,18 +80,20 @@
     }
   
     #bike-img {
-      width: 50vw;
+      width: 45vw;
     }
   
     .intro {
-      font-size: 1.5rem;
-      margin-top: 3rem;
-      color: black;
+      margin: auto;
+      margin-top: 7rem;
+      max-width: 60vw;
+      color: white;
       text-align: center;
+      font-size: 1.2rem;
     }
     
     #logo-wrapper {
-      width: 20vw;
+      width: 15vw;
       position:relative;
       left:2vw;
   
@@ -152,5 +154,10 @@
     
     form {
       margin-left: 2rem;
+    }
+
+    .p-centered {
+      margin: auto;
+      max-width: 60vw;
     }
 }
