@@ -41,6 +41,11 @@
     #bike-img {
       width: 80vw;
     }
+
+    .p-centered {
+      max-width: 85vw;
+      margin: auto;
+    }
   
     /* Menu animation, sliding drawers effect(coined?) */
   
@@ -176,25 +181,29 @@
       margin-top: 5rem;
       padding: 1rem 1rem;
       color: black;
-      border: 9px solid black;
+      border: 5px solid black;
     }
   
     .button-large-home {
-      border: 4px double orange;
+      border: 7px double orange;
       padding: 0.7rem 1rem;
       background: #474747;
       color: white;
       font-size: 1rem;
       text-transform: uppercase;
       margin: auto;
-      margin-top: 2rem;
+      margin-top: 3rem;
       display: block;
     }
   
     .intro {
-      margin-top: 2rem;
+      margin: auto;
+      margin-top: 4rem;
       text-align: center;
       color: black;
+      max-width: 85vw;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
   
     /* HOME PAGE */

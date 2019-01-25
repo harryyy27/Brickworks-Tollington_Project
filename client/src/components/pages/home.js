@@ -22,7 +22,7 @@ componentDidMount = () => {
   render() {
     return( 
       // <div className='fade-in'>
-        <div className='wrapper wrapper-two'>
+        <div className='wrapper-two'>
           <main data-testid="home-page">
           <div className='home-div'>
             <h1 className='brickworks'>BRICKWORKS</h1>

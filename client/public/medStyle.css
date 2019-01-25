@@ -18,7 +18,28 @@
     }
   
     .wrapper-two {
-      background-color: #b4b4b4;
+      background-color: transparent;
+    }
+
+    .intro {
+      margin: auto;
+      margin-top: 8rem;
+      font-weight: 400;
+      text-align: center;
+      color: white;
+      max-width: 80vw;
+    }
+
+    .button-large-home {
+      border: 7px double orange;
+      padding: 0.7rem 3rem;
+      background: #474747;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: auto;
+      margin-top: 2rem;
+      display: block;
     }
   
     .background-img {
@@ -26,7 +47,10 @@
     }
   
     .brickworks {
-      font-size: 3rem;
+      margin-top: 9rem;
+      font-size: 5rem;
+      color: white;
+      border: 9px solid white;
     }
   
     #logo-nav {
@@ -37,7 +61,12 @@
     }
   
     #bike-img {
-      width: 80vw;
+      width: 65vw;
+    }
+
+    .p-centered {
+      margin: auto;
+      max-width: 70vw;
     }
   
     .nav-link {

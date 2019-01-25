@@ -13,7 +13,7 @@ render() {
 
     <main className='wrapper'>
 
-    <h1 data-testid="projects-page">Projects</h1>
+    <h1 data-testid="projects-page">Local Projects</h1>
 
     {/* {if(process.env.NODE_ENV!== 'test') && */}
     <Bike />
