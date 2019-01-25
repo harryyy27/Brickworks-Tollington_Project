@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HeaderLogo from './img/headerLogo';
 
-
 class Nav extends React.Component {
 constructor(props){
 super(props)
@@ -18,10 +17,13 @@ componentDidDisappear = (menu) => {
   
 }
 componentDidMount = () => {
+  const menu = document.getElementById('menu');
+  const icon = document.getElementById("icon");
+  const menuLinks = document.querySelectorAll('.nav-link');
+  const home = document.getElementById('home-label');
+  const logoWrapper = document.getElementById("logo-wrapper");
   if(process.env.NODE_ENV !== 'test'){
   const pathname = this.props.location.pathname;
-  const menu = document.getElementById('menu');
-  console.log(pathname);
   if(pathname==='/'){
     if(window.innerWidth<=1080){
     menu.firstElementChild.firstElementChild.className= "nav-link current-page";
@@ -50,30 +52,25 @@ componentDidMount = () => {
     if(window.innerWidth<1081){
       /*Reenable navbar class changes*/
       menu.className ="menu menu-closed invisible";
-      const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
       /*Enable home route */
-      const home = document.getElementById('home-label');
       home.className = "";
-      /*Sets focus on navbar icon */
+      logoWrapper.tabIndex="-1"
       icon.tabIndex="0";
       icon.focus();
-      
       menuLinks.forEach(el => {
         /*Removes navliks from tab flow while menu is closed */
         el.setAttribute('tabIndex',"-1");
       })
     }
-    
     else {
-      const menuLinks = document.querySelectorAll('.nav-link')
       menu.setAttribute("aria-hidden", "false");
       menu.className = "menu"
       /*disable home route for icon */
-      const home = document.getElementById('home-label');
       home.className = "invisible";
-      const logoWrapper = document.getElementById("logo-wrapper");
       logoWrapper.focus();
+      logoWrapper.tabIndex="0"
+      icon.className="image image-closed";
       icon.tabIndex="-1";
       menuLinks.forEach(el => {
         el.setAttribute('tabIndex',"0");
@@ -81,22 +78,9 @@ componentDidMount = () => {
     }
    
   })
-  document.addEventListener("click", (event)=>{
-    
-    
-    if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerwidth<=1080){
-      const icon = document.getElementById("icon");
-      const menuLinks = document.querySelectorAll('.nav-link');
-      
-      icon.className='image image-closed';
-      menu.className='menu menu-closed';
-      menu.setAttribute("aria-hidden", "true");
-      icon.setAttribute("aria-expanded", "false");
-      menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',"-1");
-      })
-      icon.focus();
-      this.componentDidDisappear(menu);
+  document.addEventListener("click", (event)=>{ 
+    if(menu.className==="menu menu-open"&&event.target!==menu&&window.innerWidth>748 &&window.innerWidth<=1080){
+      icon.click();
     }
   })
 }
@@ -104,7 +88,6 @@ componentDidMount = () => {
 
 toggleMenu = (e) => {
   if(process.env.NODE_ENV!=="test"){
-  console.log(e.target.textContent);
   
   if(e.target.className==='nav-link'){
   let oldpage = document.querySelector('.current-page');
@@ -112,9 +95,6 @@ toggleMenu = (e) => {
   
   e.target.className = "nav-link current-page";
   e.target.focus()
-  }
-  else if(e.target.textContent==="Express"){
-
   }
 }
     const icon= document.getElementById('icon');
@@ -134,25 +114,16 @@ toggleMenu = (e) => {
       })
      
     } else if (menu.className === 'menu menu-open') {
-      
       icon.className='image image-closed';
-      menu.className='menu menu-closed';
-      menu.setAttribute("aria-hidden", "true");
-      icon.setAttribute("aria-expanded", "false");
-      menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',"-1");
-      })
-      icon.focus();
+        menu.className='menu menu-closed';
+        menu.setAttribute("aria-hidden", "true");
+        icon.setAttribute("aria-expanded", "false");
+        menuLinks.forEach(el => {
+          el.setAttribute('tabIndex',-1);
+        })
+        icon.focus();
       this.componentDidDisappear(menu);
     }
-  
-}
-
-toggleOpacity = () => {
-  if (menu.className === 'menu menu-open') {
-    console.log('working');
-    document.body.style.opacity = '0.6';
-  }
 }
 
 takeMeHome = () => {
@@ -162,17 +133,11 @@ takeMeHome = () => {
   const home = document.getElementById('home');
         home.className ="nav-link current page"
         home.focus();
-  
-}
-  
+}  
   render() {
     return (
-
-      
     <header id="menu-wrapper">
       <HeaderLogo takeMeHome={this.takeMeHome}/>
-     
-    
       <nav id="menu" 
            aria-hidden={window.innerWidth< 1081 ? 'true': 'false'}  
            data-testid="actual-menu" 
