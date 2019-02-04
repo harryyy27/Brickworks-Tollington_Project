@@ -1,5 +1,5 @@
-# Title
-Brickworks - Tollington project
+# Brickworks - Tollington project
+
 https://secret-refuge-10251.herokuapp.com/
 
 ## Contributors
@@ -12,7 +12,7 @@ Artemis Gause
 Brickworks & Octopus
 
 ## Description
-As an MVP this product aims to showcase events hosted by Brickworks aiming to bring the local community together to facilitate social actions in the Tollington area. The contents of an airtables database are loaded to the front-end to display these events and any potential interest can be registered using forms. This product should be easier to 
+As an MVP this product aims to showcase events hosted by Brickworks aiming to bring the local community together to facilitate social actions in the Tollington area. Users can see listed events and register interest in attending them or starting their own via the forms provided.
 
 ## Adapted fork contributors
 Emily, Harry
@@ -25,7 +25,7 @@ We increased the performance of the webpage in a number of ways. Text compressio
 
 ### Accessibility
 
-We ensured all mouse events could be ennacted using a keyboard. We also controlled the focus throughout the app using listeners in the root JS file whilst ensuring the focus order was the same as the html order. We used Aria labels when necessary to reveal any hidden elements. We used labels when necessary
+We ensured all mouse events could be ennacted using a keyboard. We also controlled the focus throughout the app using listeners in the root JS file whilst ensuring the focus order was the same as the html order. We used Aria attributes and labels when necessary.
 
 ### Visually
 
@@ -88,3 +88,24 @@ We learned stuff
 * `npm run parcel:watch`
 * `npm run parcel: build`
 * `npm run dev`
+
+## Setting up
+
+Want to take a look?
+
+1. git clone 'this repo'
+2. npm i
+3. add a config.env with the following
+    ```
+    AIRTABLE_API_KEY = keyJt67kk4AR3pJQ8
+
+    AIRTABLE_BASE = appLiXQwj8h3LblGB
+
+    GPASS = bgmdvanhcuignhwe
+    
+    EMAIL = whateverthehellyouwant@something.something
+    ```
+ 4. npm run parcel:build  //populates dist folder
+ 5. npm run dev //to see webpage
+ 
+ 
