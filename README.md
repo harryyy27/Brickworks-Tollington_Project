@@ -25,7 +25,7 @@ We increased the performance of the webpage in a number of ways. Text compressio
 
 ### Accessibility
 
-We ensured all mouse events could be ennacted using a keyboard. We also controlled the focus throughout the app using listeners in the root JS file whilst ensuring the focus order was the same as the html order. We used Aria attributes and labels when necessary.
+We ensured all mouse events could be ennacted using a keyboard. We also ensured full keyboard navigability. We also controlled the focus throughout the app using listeners in the root JS file whilst ensuring the focus order was the same as the html order. We used Aria attributes and labels when necessary.
 
 ### Visually
 
@@ -107,5 +107,4 @@ Want to take a look?
     ```
  4. npm run parcel:build  //populates dist folder
  5. npm run dev //to see webpage
- 
  
