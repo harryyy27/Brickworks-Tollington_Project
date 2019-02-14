@@ -30,10 +30,7 @@
       top: 3rem;
       /* overflow-y: auto; */
     }
-    .stop-scroll {
-      height: 100vh;
-      overflow:hidden;
-    }
+    
     #logo-nav {
       display: none;
     }

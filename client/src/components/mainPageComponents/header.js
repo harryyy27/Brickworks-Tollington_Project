@@ -20,7 +20,9 @@ componentDidDisappear = (menu) => {
   
 }
 componentDidMount = () => {
-  
+  this.setState((prevState)=>{
+    return{width: prevState.width + window.innerWidth} && {height:prevState.height + window.innerHeight}
+  })
   if(process.env.NODE_ENV !== 'test'){
   const pathname = this.props.location.pathname;
   const menu = document.getElementById('menu');
