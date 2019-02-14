@@ -49,6 +49,7 @@ componentDidMount = () => {
   window.addEventListener('resize', ()=>{
     if(window.innerWidth<1081){
       /*Reenable navbar class changes*/
+
       menu.className ="menu menu-closed invisible";
       const menuLinks = document.querySelectorAll('.nav-link');
       menu.setAttribute("aria-hidden", "true");
@@ -56,6 +57,7 @@ componentDidMount = () => {
       const home = document.getElementById('home-label');
       home.className = "";
       /*Sets focus on navbar icon */
+      icon.className="image image-closed";
       icon.tabIndex="0";
       icon.focus();
       
