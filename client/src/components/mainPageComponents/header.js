@@ -120,6 +120,7 @@ toggleMenu = (e) => {
     const menuLinks = document.querySelectorAll('.nav-link');
     if (menu.className === 'menu menu-closed invisible') {
       root.className = "";
+      
       icon.className='image image-open';
       menu.className='menu menu-closed';
       setTimeout(()=>{
@@ -145,7 +146,10 @@ toggleMenu = (e) => {
       this.componentDidDisappear(menu);
     }
   }
-
+handleMouseDown = (e) => {
+  this.toggleMenu();
+  e.stopPropagation();
+}
 takeMeHome = () => {
   this.props.history.push('/');
   let oldpage = document.querySelector('.current-page');
@@ -235,7 +239,8 @@ takeMeHome = () => {
       aria-controls="menu"
       aria-haspopup="true"  
       aria-expanded='false'  
-      onClick={this.toggleMenu}>
+      onClick={this.toggleMenu}
+      onMouseDown={this.handleMouseDown}>
       <span></span>
     </div>
   </header>
