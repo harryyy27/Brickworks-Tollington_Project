@@ -7,7 +7,9 @@ class Nav extends React.Component {
 constructor(props){
 super(props)
   this.state = {
-    screensize: 'small'
+    screensize: 'small',
+    width: 0,
+    height: 0,
 }
 }
 componentDidDisappear = (menu) => {
@@ -18,6 +20,7 @@ componentDidDisappear = (menu) => {
   
 }
 componentDidMount = () => {
+  
   if(process.env.NODE_ENV !== 'test'){
   const pathname = this.props.location.pathname;
   const menu = document.getElementById('menu');
@@ -47,41 +50,45 @@ componentDidMount = () => {
   }
   /*Event Listener for screen resize */
   window.addEventListener('resize', ()=>{
-    if(window.innerWidth<1081){
-      /*Reenable navbar class changes*/
-
-      menu.className ="menu menu-closed invisible";
-      const menuLinks = document.querySelectorAll('.nav-link');
-      menu.setAttribute("aria-hidden", "true");
-      /*Enable home route */
-      const home = document.getElementById('home-label');
-      home.className = "";
-      /*Sets focus on navbar icon */
-      icon.className="image image-closed";
-      icon.tabIndex="0";
-      icon.focus();
+    if(this.state.height !== window.innerHeight && this.state.width !== window.innerWidth){
+      this.setState((prevState)=>{
+        return{width: prevState.width + window.innerWidth} && {height:prevState.height + window.innerHeight}
+      })
+      if(window.innerWidth<1081){
+        /*Reenable navbar class changes*/
+  
+        menu.className ="menu menu-closed invisible";
+        const menuLinks = document.querySelectorAll('.nav-link');
+        menu.setAttribute("aria-hidden", "true");
+        /*Enable home route */
+        const home = document.getElementById('home-label');
+        home.className = "";
+        /*Sets focus on navbar icon */
+        icon.className="image image-closed";
+        icon.tabIndex="0";
+        icon.focus();
+        
+        menuLinks.forEach(el => {
+          /*Removes navliks from tab flow while menu is closed */
+          el.setAttribute('tabIndex',"-1");
+        })
+      }
       
-      menuLinks.forEach(el => {
-        /*Removes navliks from tab flow while menu is closed */
-        el.setAttribute('tabIndex',"-1");
-      })
+      else {
+        const menuLinks = document.querySelectorAll('.nav-link')
+        menu.setAttribute("aria-hidden", "false");
+        menu.className = "menu"
+        /*disable home route for icon */
+        const home = document.getElementById('home-label');
+        home.className = "invisible";
+        const logoWrapper = document.getElementById("logo-wrapper");
+        logoWrapper.focus();
+        icon.tabIndex="-1";
+        menuLinks.forEach(el => {
+          el.setAttribute('tabIndex',"0");
+        })
+      }
     }
-    
-    else {
-      const menuLinks = document.querySelectorAll('.nav-link')
-      menu.setAttribute("aria-hidden", "false");
-      menu.className = "menu"
-      /*disable home route for icon */
-      const home = document.getElementById('home-label');
-      home.className = "invisible";
-      const logoWrapper = document.getElementById("logo-wrapper");
-      logoWrapper.focus();
-      icon.tabIndex="-1";
-      menuLinks.forEach(el => {
-        el.setAttribute('tabIndex',"0");
-      })
-    }
-   
   })
   document.addEventListener("click", (event)=>{
     
