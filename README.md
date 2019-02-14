@@ -79,7 +79,6 @@ Want to take a look?
 1. git clone 'this repo'
 2. npm i
 3. add a config.env and ask for keys and passwords
-    ```
  4. npm run parcel:build  //populates dist folder
  5. npm run dev //to see webpage
  
