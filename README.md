@@ -17,11 +17,11 @@ As an MVP this product aims to showcase events hosted by Brickworks aiming to br
 ## Adapted fork contributors
 Emily, Harry
 
-## Additional content
+## Design tweaking
 We decided to adapt the design and enhance the website on several fronts upon realising the enormous scope for improvement:
 
 ### Performance
-We increased the performance of the webpage in a number of ways. Text compression using parcel-plugin-compress siginificantly reduced the size of our website improving the overall speed. We separated all of our stylesheets by media query and code split our router to minimize the effects of render blocking css/script. We also loaded components asynchronously when possible to improve the first paint time. 
+We increased the performance of the webpage in a number of ways. Text compression using parcel-plugin-compress siginificantly reduced the size of our website improving the overall first paint time. We separated all of our stylesheets by media query and code split our router to minimize the effects of render blocking css/script. 
 
 ### Accessibility
 
@@ -47,14 +47,8 @@ We definitely missed a trick here. Additional performance boost
 ### Increased testing
 We only really tested the routes delivering components and not the implementation of various html elements. A lot more testing could be done to guarantee easy future debugging. 
 
-### Unmounting components
-componentDidUnmount(removeAllListeners()) 
-
 ### Increased code-splitting
-Later in the project, when we were more familiar with react and website performance, we came to realise that we could import components only when needed. The same applies with page content and functions. We didn't dig much deeper into this but know that our website's performance could be improved further with increased splitting. 
-
-### Image reduction
-We are unfortunately guilty of leaving a few monster images in the website. These could be reduced in size and managed a little better 
+Later in the project, when we were more familiar with react and website performance, we came to realise that we could import components only when needed. The same applies with page content and functions. We didn't dig much deeper into this but know that our website's performance could be improved further with code splitting
 
 
 ## Tech stack
