@@ -118,7 +118,10 @@ p {
 a {
   text-decoration: none;
 }
-
+.stop-scroll {
+  height: 100vh;
+  overflow:hidden;
+}
 .a-links {
   display: flex;
   color: black;

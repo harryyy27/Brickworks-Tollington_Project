@@ -113,14 +113,13 @@ toggleMenu = (e) => {
   e.target.className = "nav-link current-page";
   e.target.focus()
   }
-  else if(e.target.textContent==="Express"){
-
-  }
-}
+}   
+    const root = document.getElementById('root');
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');
     if (menu.className === 'menu menu-closed invisible') {
+      root.className = "";
       icon.className='image image-open';
       menu.className='menu menu-closed';
       setTimeout(()=>{
@@ -134,7 +133,7 @@ toggleMenu = (e) => {
       })
      
     } else if (menu.className === 'menu menu-open') {
-      
+      root.className="stop-scroll";
       icon.className='image image-closed';
       menu.className='menu menu-closed';
       menu.setAttribute("aria-hidden", "true");
