@@ -111,7 +111,7 @@ componentDidMount = () => {
 
 toggleMenu = (e) => {
   if(process.env.NODE_ENV!=="test"){
-  console.log(e.target.textContent);
+  
   
   if(e.target.className==='nav-link'){
   let oldpage = document.querySelector('.current-page');
@@ -153,10 +153,7 @@ toggleMenu = (e) => {
       this.componentDidDisappear(menu);
     }
   }
-handleMouseDown = (e) => {
-  this.toggleMenu();
-  e.stopPropagation();
-}
+
 takeMeHome = () => {
   this.props.history.push('/');
   let oldpage = document.querySelector('.current-page');
@@ -247,7 +244,7 @@ takeMeHome = () => {
       aria-haspopup="true"  
       aria-expanded='false'  
       onClick={this.toggleMenu}
-      onMouseDown={this.handleMouseDown}>
+      >
       <span></span>
     </div>
   </header>

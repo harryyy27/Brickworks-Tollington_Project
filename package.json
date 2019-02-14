@@ -28,7 +28,7 @@
   "homepage": "https://github.com/fac-14/Brickworks-Tollington_Project.git#readme",
   "keywords": [],
   "dependencies": {
-    "airtable": "^0.5.7",
+    "airtable": "^0.5.9",
     "ajv": "^6.5.4",
     "audit": "0.0.6",
     "body-parser": "^1.18.3",
@@ -41,7 +41,7 @@
     "isomorphic-fetch": "^2.2.1",
     "node-fetch": "^2.2.0",
     "nodemailer": "^4.6.8",
-    "parcel-bundler": "^1.10.1",
+    "parcel-bundler": "^1.11.0",
     "path": "^0.12.7",
     "pg": "^7.4.3",
     "react": "^16.5.2",
@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
-    "parcel-plugin-compress": "^1.0.6",
+    "parcel-plugin-compress": "^1.0.7",
     "prettier": "^1.14.3",
     "react-testing-library": "^5.2.0",
     "supertest": "^3.3.0"
