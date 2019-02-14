@@ -28,10 +28,12 @@
       height: calc(var(--vh, 1vh)*100);
       width: 100vw;
       top: 3rem;
-      z-index: 1;
       /* overflow-y: auto; */
     }
-  
+    .stop-scroll {
+      height: 100vh;
+      overflow:hidden;
+    }
     #logo-nav {
       display: none;
     }

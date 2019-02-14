@@ -123,7 +123,7 @@ toggleMenu = (e) => {
   e.target.focus()
   }
 }   
-    const root = document.getElementById('root');
+    const root = document.querySelector("body");
     const icon= document.getElementById('icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.nav-link');
