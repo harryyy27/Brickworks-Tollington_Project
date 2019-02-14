@@ -44,6 +44,8 @@ class App extends React.Component {
     
     const menu = document.getElementById('menu');
     const menuBtn = document.getElementById('icon');
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     /* Setting focus upon page loading */
     if(window.innerWidth<1081){
       menuBtn.focus();
@@ -55,13 +57,16 @@ class App extends React.Component {
     focusable[0].focus();
     }
   }
-    else {
-      // const brickHome = document.getElementById('logo-wrapper');
-      // brickHome.focus();
-      
-    }
-  
   }
+  window.addEventListener("scroll", (e)=>{
+    if(menu.className==="menu menu-open"){
+      e.preventDefault();
+    }
+  })
+  window.addEventListener("resize",()=>{
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  })
     /* Tabbing functions */
     document.addEventListener('keydown', (event)=>{
       console.log(document.activeElement);
@@ -150,7 +155,6 @@ class App extends React.Component {
         <Route path='/faq' component = {Faq} />
         <Route path='/resources' component = {Resources} />
         <Route path ='/inspirations' component = {Inspiration} />
-        {/* <Route path ='/things-to-think-about' component = {TopTen} /> */}
         <Route path ='/start-social-action' component = {ContactUs} />
         <Route path ='/topten' component = {TopTen} />
         <Route path ='/projects' component = {Projects} />

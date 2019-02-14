@@ -25,6 +25,7 @@
     .menu {
       position: absolute;
       height: 100vh;
+      height: calc(var(--vh, 1vh)*100);
       width: 100vw;
       top: 3rem;
       /* overflow-y: auto; */
@@ -61,31 +62,38 @@
   
     .menu :nth-child(2){
       top: calc((100vh - 3rem)/7);
+      top: calc((var(--vh, 1vh)*100 - 3rem)/7);
+      
       transition-delay: 0.1s
     }
   
     .menu :nth-child(3) {
       top: calc(2*(100vh - 3rem)/7);
+      top: calc(2*(var(--vh, 1vh)*100 - 3rem)/7);
       transition-delay: 0.2s
     }
   
     .menu :nth-child(4){
       top: calc(3*(100vh - 3rem)/7);
+      top: calc(3*(var(--vh, 1vh)*100 - 3rem)/7);
       transition-delay: 0.3s
     }
   
     .menu :nth-child(5){
       top: calc(4*(100vh - 3rem)/7);
+      top: calc(4*(var(--vh, 1vh)*100 - 3rem)/7);
       transition-delay: 0.4s
     }
   
     .menu :nth-child(6){
       top: calc(5*(100vh - 3rem)/7);
+      top: calc(5*(var(--vh, 1vh)*100 - 3rem)/7);
       transition-delay: 0.5s
     }
   
     .menu :nth-child(7){
       top: calc(6*(100vh - 3rem)/7);
+      top: calc(6*(var(--vh, 1vh)*100 - 3rem)/7);
       transition-delay: 0.6s
     }
   
@@ -106,7 +114,9 @@
       background: black;
       width: 100%;
       height: calc((100vh - 3rem)/7);
+      height: calc((var(--vh, 1vh)*100 - 3rem)/7);
       line-height: calc((100vh - 3rem)/7);
+      height: calc((var(--vh, 1vh)*100 - 3rem)/7);
       vertical-align:middle;
       padding-left: 1.5rem;
       text-decoration: none;
@@ -124,6 +134,7 @@
       position: absolute;
       right: 1rem;
       height: 6vh;
+      height: var(--vh, 1vh)*6;
       margin: 0.5rem 0rem;
       cursor: pointer;
     }

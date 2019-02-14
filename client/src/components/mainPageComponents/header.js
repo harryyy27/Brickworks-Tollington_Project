@@ -145,15 +145,7 @@ toggleMenu = (e) => {
       icon.focus();
       this.componentDidDisappear(menu);
     }
-  
-}
-
-toggleOpacity = () => {
-  if (menu.className === 'menu menu-open') {
-    console.log('working');
-    document.body.style.opacity = '0.6';
   }
-}
 
 takeMeHome = () => {
   this.props.history.push('/');

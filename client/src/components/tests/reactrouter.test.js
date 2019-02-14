@@ -3,7 +3,7 @@ import {Link, Route, Router, Switch} from 'react-router-dom'
 import {createMemoryHistory} from 'history'
 import {render, fireEvent, cleanup} from 'react-testing-library'
 import App from '../App';
-import Home from '../pages/home'
+
 
 
 
@@ -27,7 +27,6 @@ import Home from '../pages/home'
     }
   }
   jest.mock('../mainPageComponents/img/headerLogo.js', ()=> ()=> <div>SHHHMOCK</div>)
-  jest.mock('../mainPageComponents/img/homeContent.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/bike.js', ()=> ()=> <div>SHHHMOCK</div>)
   jest.mock('../mainPageComponents/img/validationIcon.js', ()=> ()=> <div>SHHHMOCK</div>)
   // jest.mock('../pages/social-actions', () => ()=><div>SHMOCKKK</div>)
