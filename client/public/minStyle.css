@@ -28,7 +28,7 @@
       height: calc(var(--vh, 1vh)*100);
       width: 100vw;
       top: 3rem;
-      
+      overflow: hidden;
       /* overflow-y: auto; */
     }
   
