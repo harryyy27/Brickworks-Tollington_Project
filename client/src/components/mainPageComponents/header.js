@@ -20,9 +20,7 @@ componentDidDisappear = (menu) => {
   
 }
 componentDidMount = () => {
-  this.setState((prevState)=>{
-    return{width: prevState.width + window.innerWidth} && {height:prevState.height + window.innerHeight}
-  })
+  this.setState({width: window.innerWidth})
   if(process.env.NODE_ENV !== 'test'){
   const pathname = this.props.location.pathname;
   const menu = document.getElementById('menu');
@@ -52,10 +50,8 @@ componentDidMount = () => {
   }
   /*Event Listener for screen resize */
   window.addEventListener('resize', ()=>{
-    if(this.state.height !== window.innerHeight && this.state.width !== window.innerWidth){
-      this.setState((prevState)=>{
-        return{width: prevState.width + window.innerWidth} && {height:prevState.height + window.innerHeight}
-      })
+    if(this.state.width !== window.innerWidth){
+      this.setState({width: window.innerWidth})
       if(window.innerWidth<1081){
         /*Reenable navbar class changes*/
   
