@@ -52,28 +52,17 @@ Later in the project, when we were more familiar with react and website performa
 
 
 ## Tech stack
-Core
-* JavaScript
-* Node.js
-* Express.js
-* React.js
-* Airtables
-* Nodemailer
 
-Testing
-* Jest
-* React-testing-library
-* Supertest
-* history
-* Nodemon
+| Core    | Testing     | Additional    |
+| :------------- | :----------: | -----------: |
+|  Javascript | Jest   | Parcel    |
+| HTML   | React-testing-library | Babel |
+| CSS   | Supertest | Concurrently |
+| Express.js   | History | React-Router-DOM |
+| React.js  | Nodemon | GZip |
+| Airtables   |  | Eslint |
+| Nodemailer   |  | Heroku |
 
-Additional
-* Concurrently
-* React-Router-DOM
-* Parcel
-* Babel
-* GZip
-* Eslint
 
 ## Summary
 We learned stuff
