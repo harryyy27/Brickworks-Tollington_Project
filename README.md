@@ -95,15 +95,7 @@ Want to take a look?
 
 1. git clone 'this repo'
 2. npm i
-3. add a config.env with the following
-    ```
-    AIRTABLE_API_KEY = keyJt67kk4AR3pJQ8
-
-    AIRTABLE_BASE = appLiXQwj8h3LblGB
-
-    GPASS = bgmdvanhcuignhwe
-    
-    EMAIL = whateverthehellyouwant@something.something
+3. add a config.env and ask for keys and passwords
     ```
  4. npm run parcel:build  //populates dist folder
  5. npm run dev //to see webpage
