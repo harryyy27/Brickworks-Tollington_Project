@@ -65,7 +65,7 @@ Later in the project, when we were more familiar with react and website performa
 
 
 ## Summary
-We learned stuff
+We feel slightly more intelligent
 
 ## Technical commands
 * `npm run parcel:watch`
