@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import getAllEvents from '../utils/utilsgetAllEvent';
-import getPastEvents from '../utils/utilsgetPastEvent';
 import {EventComp, UpcomingEvents, PastEvents} from './eventComp';
+import "babel-polyfill"
 
 
 class SocialActions extends React.Component {
@@ -16,29 +15,26 @@ constructor(props){
     pastEvntLoading: true,
   }
 }
-componentDidMount() {
+async componentDidMount() {
   if(process.env.NODE_ENV !== 'test'){
   window.scrollTo(0,0);
-
-  getAllEvents()
-  .then(response => {
-    //set allEvents state
-    this.setState( { allEvents: response, allEvntLoading: false});
-    //pass data to parent
-    
-  })
+try{
+  const response = await fetch(`/api/getAllEventsAirTable`)
+  if(!response.ok){
+    throw Error(response.statusText);
+  }
+  const json = await response.json();
+  this.setState({allEvents: json, allEvntLoading: false})
   
-  .catch(err => console.log(err));
-
-  getPastEvents()
-  .then(response => {
-  
-  this.setState( { pastEvents : response, pastEvntLoading:false});
- 
-  
-})
-
-.catch(err => console.log(err));
+  const pastResponse = await fetch(`/api/getPastEventsAirTable`)
+  if(!pastResponse.ok){
+    throw Error(pastResponse.statusText)
+  }
+  const jsonPast = await pastResponse.json();
+  this.setState( { pastEvents : jsonPast, pastEvntLoading:false});
+} catch(e){
+  console.log(e);
+}
   }
 }
 

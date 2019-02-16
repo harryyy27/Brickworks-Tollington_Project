@@ -119,6 +119,7 @@ const PastEvents = ({ pastEvents}) => {
   if(pastEvents.length !== 0){
     return (
       <React.Fragment>
+        <h2>Past Events</h2>
         {pastEvents.map( event => (
               <EventComp key={event.fields.event_id} {...event.fields} /> 
             ))} 

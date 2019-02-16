@@ -413,3 +413,12 @@ hr.style2 {
 *:focus {
   border: 5px solid orangered;
 }
+.grey {
+  color: grey;
+  text-shadow: 1px 1px black;
+  font-weight: 400;
+}
+.shadow {
+  text-shadow: 1px 1px lightgrey;
+  font-weight: 400;
+}
