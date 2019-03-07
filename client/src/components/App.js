@@ -96,12 +96,15 @@ class App extends React.Component {
         case 'ArrowUp':
         
         if(menu.className==="menu menu-open"&&document.activeElement===menuBtn&&window.innerWidth<1081){
+          event.preventDefault();
           menu.lastElementChild.firstElementChild.focus();
         }
         else if(document.activeElement === menu.firstElementChild.firstElementChild&&window.innerWidth<1081){
+          event.preventDefault()
           menuBtn.focus();
         }
         else if(menu.className==="menu menu-open"&&window.innerWidth<1081){
+          event.preventDefault()
           // console.log(document.activeElement.parentElement.prev);
           document.activeElement.parentElement.previousElementSibling.firstElementChild.focus();
         }
@@ -111,14 +114,15 @@ class App extends React.Component {
         case 'ArrowDown':
         
         if(menu.className==="menu menu-open"&& document.activeElement===menuBtn&&window.innerWidth<1081){
-          console.log(menu.firstElementChild.firstElementChild)
+          event.preventDefault()
           menu.firstElementChild.firstElementChild.focus();
         }
         else if(document.activeElement === menu.lastElementChild.firstElementChild&&window.innerWidth<1081){
+          event.preventDefault();
           menuBtn.focus();
         }
         else if(menu.className==="menu menu-open"&&window.innerWidth<1081){
-          // console.log(document.activeElement.parentElement.prev);
+          event.preventDefault()
           document.activeElement.parentElement.nextSibling.firstElementChild.focus();
         }
         break;
@@ -140,6 +144,13 @@ class App extends React.Component {
       }
     })
     
+    
+  }
+  setCurrentPage = () => {
+    
+    const social = document.getElementById('social-actions')
+  
+    social.classList.add('current-page')
   }
   render () {
   return (
@@ -148,7 +159,7 @@ class App extends React.Component {
       <div className='background-img'>
       <Navbar />
       <Switch>
-        <Route exact path='/' component= { Home } />
+        <Route exact path='/' render={(props)=> <Home {...props} setCurrentPage={this.setCurrentPage} />}/>
         <Route path='/social-actions' render={(props) => <SocialActions {...props} updateNav={this.updateNav} />}/>
         <Route path='/promote-social-action' component= { ListEvent } />
         <Route path='/event-detailed' render={(props) => <EventDetailed {...props} data={this.state.data} />}/>

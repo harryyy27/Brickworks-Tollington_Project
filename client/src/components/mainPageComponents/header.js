@@ -170,7 +170,18 @@ takeMeHome = () => {
       
     <header id="menu-wrapper">
       <HeaderLogo takeMeHome={this.takeMeHome}/>
-     
+      <div  
+      id="icon"
+      className="image image-closed"
+      tabIndex={window.innerWidth< 1081 ? '0': '-1'}  
+      data-testid="menu"
+      aria-controls="menu"
+      aria-haspopup="true"  
+      aria-expanded='false'  
+      onClick={this.toggleMenu}
+      >
+      <span></span>
+    </div>
     
       <nav id="menu" 
            aria-hidden={window.innerWidth< 1081 ? 'true': 'false'}  
@@ -235,18 +246,7 @@ takeMeHome = () => {
                 to='/resources'>Resources & Tips</Link>
         </label>
       </nav>
-    <div  
-      id="icon"
-      className="image image-closed"
-      tabIndex={window.innerWidth< 1081 ? '0': '-1'}  
-      data-testid="menu"
-      aria-controls="menu"
-      aria-haspopup="true"  
-      aria-expanded='false'  
-      onClick={this.toggleMenu}
-      >
-      <span></span>
-    </div>
+    
   </header>
   )}
 }

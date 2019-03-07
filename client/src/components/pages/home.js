@@ -17,6 +17,7 @@ componentDidMount = () => {
   
   addEvent = () => {
     this.props.history.push('/social-actions');
+    this.props.setCurrentPage()
   }
 
   render() {
